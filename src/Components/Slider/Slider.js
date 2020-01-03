@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import style from '../Slider/Slider.scss'
 
 class Slider extends Component {
     render() {
@@ -11,23 +12,23 @@ class Slider extends Component {
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="..." class="d-block w-100" alt="..."/>
+                        <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(45).jpg" class="d-block w-100" alt="..."/>
                             <div class="carousel-caption d-none d-md-block">
-                                <h5>First slide label</h5>
+                                <h3>First slide label</h3>
                                 <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                             </div>
                     </div>
                         <div class="carousel-item">
-                            <img src="..." class="d-block w-100" alt="..."/>
+                            <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(46).jpg" class="d-block w-100" alt="..."/>
                                 <div class="carousel-caption d-none d-md-block">
-                                    <h5>Second slide label</h5>
+                                    <h3>Second slide label</h3>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 </div>
                         </div>
                             <div class="carousel-item">
-                                <img src="..." class="d-block w-100" alt="..."/>
+                                <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(47).jpg" class="d-block w-100" alt="..."/>
                                     <div class="carousel-caption d-none d-md-block">
-                                        <h5>Third slide label</h5>
+                                        <h3>Third slide label</h3>
                                         <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
                                     </div>
                             </div>
