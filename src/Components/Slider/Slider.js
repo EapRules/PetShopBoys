@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import style from '../Slider/Slider.scss'
+import style from '../Slider/Slider.scss';
 
 class Slider extends Component {
     render() {
@@ -14,22 +14,29 @@ class Slider extends Component {
                     <div class="carousel-item active">
                         <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(45).jpg" class="d-block w-100" alt="..."/>
                             <div class="carousel-caption d-none d-md-block">
-                                <h3>First slide label</h3>
-                                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                <h3>Petshop</h3>
+                                <p>Ponemos a tu alcance todo lo que tu fiel amigo necesita</p>
                             </div>
                     </div>
                         <div class="carousel-item">
                             <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(46).jpg" class="d-block w-100" alt="..."/>
                                 <div class="carousel-caption d-none d-md-block">
-                                    <h3>Second slide label</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <h3>Consultas</h3>
+                                    <p>Realice sus consultas online</p>
                                 </div>
                         </div>
                             <div class="carousel-item">
                                 <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(47).jpg" class="d-block w-100" alt="..."/>
                                     <div class="carousel-caption d-none d-md-block">
-                                        <h3>Third slide label</h3>
-                                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                                        <h3>Internacion/Cirugia</h3>
+                                        {/* <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p> */}
+                                    </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(47).jpg" class="d-block w-100" alt="..."/>
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h3>Emergencias</h3>
+                                        <p>Llamá: 0800-234-2345</p>
                                     </div>
                             </div>
                             </div>
