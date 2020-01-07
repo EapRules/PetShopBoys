@@ -19,29 +19,36 @@ class Slider extends Component {
                     <div class="carousel-item active">
                         <img src={image1} class="d-block w-100" alt="..."/>
                             <div class="carousel-caption d-none d-md-block">
+                                <a href="#">
                                 <h3>Petshop</h3>
                                 <p>Ponemos a tu alcance todo lo que tu fiel amigo necesita</p>
+                                </a>
                             </div>
                     </div>
                         <div class="carousel-item">
                             <img src={image2} class="d-block w-100" alt="..."/>
                                 <div class="carousel-caption d-none d-md-block">
+                                    <a href="#">
                                     <h3>Consultas</h3>
                                     <p>Realice sus consultas online</p>
+                                    </a>
                                 </div>
                         </div>
                         <div class="carousel-item">
                                 <img src={image3} class="d-block w-100" alt="..."/>
                                     <div class="carousel-caption d-none d-md-block">
+                                        <a href="#">
                                         <h3>Internacion/Cirugia</h3>
-                                        {/* <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p> */}
+                                        </a>
                                     </div>
                         </div>
                         <div class="carousel-item">
                                 <img src={image4} class="d-block w-100" alt="..."/>
                                     <div class="carousel-caption d-none d-md-block">
+                                        <a href="#">
                                         <h3>Emergencias</h3>
                                         <p>Llamá: 0800-234-2345</p>
+                                        </a>
                                     </div>
                         </div>
                     </div>
