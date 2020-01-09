@@ -8,12 +8,12 @@ export default class MarketCard extends Component {
     }
     render() {
         return (
-            <div class="card">
-                <img src={this.props.imgUrl} class="card-img-top" alt={this.props.title} />
-            <div class="card-body">
-                    <h5 class="card-title">{this.props.title} - ${this.props.price}</h5>
-                    <p class="card-text">{this.props.body}</p>
-                    <a href="!#" class="btn btn-success"><i className="fas fa-shopping-cart"></i> Agregar</a>
+            <div className="card" style={{ width: 223, height: 400 }}>
+                <img src={this.props.imgUrl} className="card-img-top img-fluid" alt={this.props.title} />
+                <div className="card-body">
+                    <h5 className="card-title">{this.props.title} - ${this.props.price}</h5>
+                    <p style={{ height: 50 }} className="card-text text-truncate">{this.props.body}</p>
+                    <button className="btn btn-success" onClick={() => { this.props.addProduct(this.props.title, this.props.price) }}><i className="fas fa-shopping-cart"></i> Agregar</button>
                 </div>
             </div>
         )
