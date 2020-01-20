@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
 
-export default class Login extends Component {
+import Login from '../../Auth/Login'
+
+export default class Auth extends Component {
   render() {
     return (
       <div>
@@ -14,7 +17,8 @@ export default class Login extends Component {
         </button>
               </div>
               <div class="modal-body row justify-content-around">
-                <div class="m-5">
+<Login />
+                {/* <div class="m-5">
                   <p class="font-weight-bold text-center">LOGIN</p>
                   <div class="input-group mb-3">
                     <div class="input-group-prepend">
@@ -31,7 +35,7 @@ export default class Login extends Component {
                   <div class="text-center">
                     <button type="button" class="btn btn-primary btn-sm">Ingresar</button>
                   </div>
-                </div>
+                </div> */}
                 <div >
                   <p class="font-weight-bold text-center">REGISTRO</p>
                   <div class="input-group-sm mb-3">
