@@ -31,7 +31,7 @@ console.log(this.state)
                     <label for="exampleInputPassword1">Contraseña</label>
                     <input type="password" className="form-control" placeholder="Ingrese su contraseña" name='password' value={this.state.password} onChange={this.handleChange} />
                 </div>
-                <button type="submit" className="btn btn-success w-100 mt-4">Ingresar</button>
+                <button type="submit" className="btn btn-success w-100 mt-4">Logeo</button>
             </form>
 
         )
