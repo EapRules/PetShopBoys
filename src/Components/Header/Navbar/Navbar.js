@@ -1,18 +1,17 @@
 import React, { Component } from 'react'
 import styles from './Navbar.scss';
 import Login from '../Login/Auth';
+import Logo192 from '../../../images/logo192.png'
 export default class Navbar extends Component {
   render() {
     return (
       <div>
         <div class="alert alert-success text-center" role="alert">
-          <p class="text-danger"> EMERGENCIAS - 0800-234-2345</p>
+          <p class="text-danger"><strong>EMERGENCIAS - 0800-234-2345</strong></p>
         </div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <a className="navbar-brand" href="#">
-            <img src="../../../images/logo.png" width="30" height="30" className="d-inline-block align-top" alt="" />
-            PetShopBoys
-  </a>
+            <img src= {Logo192} width="30" height="30" className="d-inline-block align-top" alt="" /><strong>  PetShopBoys</strong></a>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>

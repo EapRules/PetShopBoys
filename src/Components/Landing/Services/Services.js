@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import imagen1 from '../../images/Services-img/imagen1.jpg'
-import imagen3 from '../../images/Services-img/imagen3.jpg'
-import imagen4 from '../../images/Services-img/imagen4.jpg'
-import imagen5 from '../../images/Services-img/imagen5.jpg'
-import imagen6 from '../../images/Services-img/imagen6.jpg'
-import imagen7 from '../../images/Services-img/imagen7.jpg'
+import imagen1 from '../../../images/Services-img/imagen1.jpg'
+import imagen3 from '../../../images/Services-img/imagen3.jpg'
+import imagen4 from '../../../images/Services-img/imagen4.jpg'
+import imagen5 from '../../../images/Services-img/imagen5.jpg'
+import imagen6 from '../../../images/Services-img/imagen6.jpg'
+import imagen7 from '../../../images/Services-img/imagen7.jpg'
 
 
 class Services extends Component {
