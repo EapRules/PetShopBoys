@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styles from './Navbar.scss';
-import Login from '../Login/Login';
+import Login from '../Login/Auth';
 export default class Navbar extends Component {
   render() {
     return (

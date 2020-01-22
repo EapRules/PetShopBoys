@@ -10,12 +10,11 @@ import ProductList from '../Components/Admin-Page/Product-list/Product-list';
 function App() {
   return (
     <div className="App">
-      <Navbar></Navbar>
-      <Slider></Slider>
-      <Services></Services>
+      <Navbar />
+      <Slider />
+      <Services />
       <Market />
-      <Footer></Footer>
-      <ProductList></ProductList>
+      <Footer />
     </div>
   );
 }
