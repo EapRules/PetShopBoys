@@ -6,9 +6,9 @@ export default class Market extends Component {
 
     state = {
         market: [],
-        isLoggedIn: false,
+        isLoggedIn: localStorage.getItem('token') ? true : false,
         buy: false,
-        redirectToLogin: false
+        redirectToLogin: localStorage.getItem('token') ? false : true
     }
 
     addProduct = (name, price) => {
