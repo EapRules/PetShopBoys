@@ -4,6 +4,8 @@ import Slider from '../Components/Slider/Slider';
 import Services from '../Components/Services/Services';
 import Market from '../Components/Market/Market';
 import Footer from '../Components/Footer/Footer';
+import ProductList from '../Components/Admin-Page/Product-list/Product-list';
+
 
 function App() {
   return (
@@ -13,6 +15,7 @@ function App() {
       <Services></Services>
       <Market />
       <Footer></Footer>
+      <ProductList></ProductList>
     </div>
   );
 }
