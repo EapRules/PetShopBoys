@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Modal from './Modal/Modal'
 
 export default class ProductList extends Component {
     render() {
@@ -11,7 +12,8 @@ export default class ProductList extends Component {
                     
                 </div>
                 <div className=" d-flex justify-content-end">
-                <button type="button"  className="btn btn-success m-4">Success</button>
+                
+                    <Modal/>
                 </div>
                 <div className="contenedor-lista">
                     <div className=" m-5">
@@ -19,10 +21,10 @@ export default class ProductList extends Component {
                     <thead className="text-center">
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
-                            <th scope="col">image</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Descripcion</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">imagen</th>
                         </tr>
                     </thead>
                     <tbody className="text-center">

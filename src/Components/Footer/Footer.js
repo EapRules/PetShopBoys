@@ -39,17 +39,17 @@ export default class Footer extends Component {
                   </li>
                   <li>
                     <p>
-                      <a className="" href="#!">Tarjetas</a>
+                      <a className="" href="#!">Tienda</a>
                     </p>
                   </li>
                   <li>
                     <p>
-                      <a className="" href="#!">Creditos</a>
+                      <a className="" href="#!">Turno </a>
                     </p>
                   </li>
                   <li>
                     <p>
-                      <a className="" href="#!">Home banking</a>
+                      <a className="" href="#!">Consulta</a>
                     </p>
                   </li>
                 </ul>
@@ -73,7 +73,7 @@ export default class Footer extends Component {
                   </li>
                   <li>
                     <p>
-                      <i className="fas fa-envelope mr-3"></i> info@rollingbank.com</p>
+                      <i className="fas fa-envelope mr-3"></i> info@Petshops.com</p>
                   </li>
                   <li>
                     <p>
