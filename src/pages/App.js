@@ -13,6 +13,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import Consultas from '../Components/Consultas/Consultas';
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
               <Route exact path="/admin/productos" component={Sidebar,ProductList}>
                 
               </Route>
+              <Route exact path="/consultas" component={Consultas}>
+                
+                </Route>
           </Switch>
           <Footer/>
         </main> 
