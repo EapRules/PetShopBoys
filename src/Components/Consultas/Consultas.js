@@ -29,46 +29,46 @@ export default class Consultas extends Component {
                     <h2 className="text-center">Sus datos</h2>
                     <div class="row py-1 justify-content-around">
                         <div class="col-5">
-                            <input type="text" class="form-control" placeholder="Nombre" />
+                            <input type="text" class="form-control input-consulta" placeholder="Nombre" />
                         </div>
                         <div class="col-5">
-                            <input type="text" class="form-control" placeholder="Apellido" />
+                            <input type="text" class="form-control input-consulta" placeholder="Apellido" />
                         </div>
                     </div>
                     <div class="row py-3 justify-content-around">
                         <div class="col-5">
-                            <input type="email" class="form-control" placeholder="Email" />
+                            <input type="email" class="form-control input-consulta" placeholder="Email" />
                         </div>
                         <div class="col-5">
-                            <input type="text" class="form-control" placeholder="Telefono" />
+                            <input type="text" class="form-control input-consulta" placeholder="Telefono" />
                         </div>
                     </div>
                     <h2 className="text-center">Sobre su Mascota</h2>
                     <div class="row py-3 justify-content-around">
                         <div class="form-group col-md-5">
-                            <label for="inputState">Especie</label>
-                            <select id="inputState" class="form-control">
+                            <label>Especie</label>
+                            <select class="form-control">
                                 <option selected>Canino</option>
                                 <option>Felino</option>
                                 <option>Otro</option>
                             </select>
                         </div>
                         <div class="form-group col-md-5">
-                            <label for="inputState">Sexo</label>
-                            <select id="inputState" class="form-control">
+                            <label>Sexo</label>
+                            <select class="form-control">
                                 <option selected>Masculino</option>
                                 <option>Femenino</option>
                             </select>
                         </div>
                         <div class="col-5">
-                            <input type="text" class="form-control" placeholder="Raza de la mascota" />
+                            <input type="text" class="form-control input-consulta" placeholder="Raza de la mascota" />
                         </div>
                         <div class="col-5">
-                            <input type="text" class="form-control" placeholder="Nombre de la mascota" />
+                            <input type="text" class="form-control input-consulta" placeholder="Nombre de la mascota" />
                         </div>
                         <div class="form-group my-3">
-                            <label for="exampleFormControlTextarea1">Example textarea</label>
-                            <textarea class="form-control w-80" rows="5"></textarea>
+                            <label>Example textarea</label>
+                            <textarea class="form-control textarea-consulta" rows="5"></textarea>
                         </div>
                     </div>
                 </form>

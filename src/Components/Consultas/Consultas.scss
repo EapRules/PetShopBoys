@@ -12,3 +12,12 @@
         font-size: 1.2rem;
     };
 }
+.form-group{
+    .form-control, .input-consulta{
+        border: none;
+        border-bottom: 2px solid green !important;
+    }
+}
+.textarea-consulta{
+    width: 50vw;
+}
