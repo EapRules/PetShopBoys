@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import styles from './Navbar.scss';
 import Login from '../Login/Auth';
 import Logo192 from '../../../images/logo192.png'
+import { Link } from 'react-router-dom';
 export default class Navbar extends Component {
   render() {
     return (
@@ -10,8 +11,8 @@ export default class Navbar extends Component {
           <p class="text-danger"><strong>EMERGENCIAS - 0800-234-2345</strong></p>
         </div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <a className="navbar-brand" href="#">
-            <img src= {Logo192} width="30" height="30" className="d-inline-block align-top" alt="" /><strong>  PetShopBoys</strong></a>
+          <Link exact to="/" className="navbar-brand" href="#">
+            <img src= {Logo192} width="30" height="30" className="d-inline-block align-top" alt="" /><strong>  PetShopBoys</strong></Link>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -24,7 +25,7 @@ export default class Navbar extends Component {
                 <a className="nav-link" href="#">Turno</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">Consulta</a>
+                <Link exact to="/consultas" className="nav-link" href="#">Consulta</Link>
               </li>
               <li className="nav-item">
                 <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#staticBackdrop">
