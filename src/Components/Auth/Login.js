@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import $ from 'jquery'
+import $ from 'jquery'
 import jwt from 'jsonwebtoken'
 
 export default class Login extends Component {
@@ -32,6 +32,7 @@ export default class Login extends Component {
     // on every modal change state like in hidden modal
     for (let i = 0; i < modals.length; i++) {
       modals[i].classList.remove('show');
+      document.body.classList.remove('modal-open')
       modals[i].setAttribute('aria-hidden', 'true');
       modals[i].setAttribute('style', 'display: none');
     }
@@ -56,7 +57,7 @@ export default class Login extends Component {
     }
 
     const response = await fetch(
-      "http://192.168.10.210:4000/signin",
+      "http://192.168.1.114:4000/signin",
       {
         method: "POST",
         body: JSON.stringify(this.state),
