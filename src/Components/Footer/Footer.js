@@ -112,8 +112,8 @@ export default class Footer extends Component {
 
           </div>
 
-          <div class="footer-copyright text-center py-3 blue darken-3">© 2018 Copyright:
-            <a class="" href="index.html"> Rolling Bank</a>
+          <div className="footer-copyright text-center py-3 blue darken-3">© 2018 Copyright:
+            <a className="" href="index.html"> Rolling Bank</a>
           </div>
 
 

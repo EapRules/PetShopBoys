@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 // import $ from 'jquery'
 import jwt from 'jsonwebtoken'
 
@@ -75,7 +75,7 @@ export default class Login extends Component {
     return (
       <form onSubmit={this.onSubmit}>
         <div className="form-group">
-          <label for="exampleInputEmail1">
+          <label htmlFor="exampleInputEmail1">
             Dirección de correo
                          </label>
           <input
@@ -91,7 +91,7 @@ export default class Login extends Component {
                          </small>
         </div>
         <div className="form-group">
-          <label for="exampleInputPassword1">Contraseña</label>
+          <label htmlFor="exampleInputPassword1">Contraseña</label>
           <input
             type="password"
             className="form-control"

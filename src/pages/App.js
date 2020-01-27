@@ -5,14 +5,12 @@ import Services from '../Components/Services/Services';
 import Market from '../Components/Market/Market';
 import Footer from '../Components/Footer/Footer';
 import ProductList from '../Components/Admin-Page/Product-list/Product-list';
-import { BrowserRouter as Router, Route, withRouter } from "react-router-dom";
 import Sidebar from '../Components/Admin-Page/Sidebar/Sidebar';
 
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 
 function App() {

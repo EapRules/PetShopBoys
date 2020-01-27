@@ -23,7 +23,7 @@ class Services extends Component {
                             <div className="card-body">
                                 <h5 className="card-title">Consulta</h5>
                                 <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" className="btn btn-primary">Saber +</a>
+                                <a href="http://localhost:3000" className="btn btn-primary">Saber +</a>
                             </div>
                         </div>
                     </div>
@@ -34,7 +34,7 @@ class Services extends Component {
                             <div className="card-body">
                                 <h5 className="card-title">Estetica</h5>
                                 <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" className="btn btn-primary">Saber +</a>
+                                <a href="http://localhost:3000" className="btn btn-primary">Saber +</a>
                             </div>
                         </div>
                     </div>
@@ -45,7 +45,7 @@ class Services extends Component {
                             <div class="card-body">
                                 <h5 class="card-title">Cirugia</h5>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Saber +</a>
+                                <a href="http://localhost:3000" class="btn btn-primary">Saber +</a>
                             </div>
                         </div>
                     </div>
@@ -56,7 +56,7 @@ class Services extends Component {
                             <div class="card-body">
                                 <h5 class="card-title">Internacion</h5>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Saber +</a>
+                                <a href="http://localhost:3000" class="btn btn-primary">Saber +</a>
                             </div>
                         </div>
                     </div>
@@ -67,7 +67,7 @@ class Services extends Component {
                             <div class="card-body">
                                 <h5 class="card-title">Vacunacion</h5>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Saber +</a>
+                                <a href="http://localhost:3000" class="btn btn-primary">Saber +</a>
                             </div>
                         </div>
                     </div>
@@ -78,7 +78,7 @@ class Services extends Component {
                             <div class="card-body">
                                 <h5 class="card-title">Radiografia</h5>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Saber +</a>
+                                <a href="http://localhost:3000" class="btn btn-primary">Saber +</a>
                             </div>
                         </div>
                     </div>
