@@ -29,7 +29,7 @@ export default class Navbar extends Component {
               </li>
               <li className="nav-item">
                 <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#staticBackdrop">
-               <i class="fas fa-user-circle"></i> Ingresar 
+                  <i class="fas fa-user-circle"></i> Ingresar
                 </button>
               </li>
             </ul>
