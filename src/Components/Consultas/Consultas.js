@@ -26,7 +26,7 @@ export default class Consultas extends Component {
 
                 <form className="py-5">
 
-                    <h2 className="text-center">Sus datos personales</h2>
+                    <h2 className="text-center font-weight-bold">Sus datos personales</h2>
                     <div class="row py-1 justify-content-around md-form">
                         <div class="col-5">
                             <input type="text" class="form-control input-consulta" placeholder="Nombre" />
@@ -43,7 +43,7 @@ export default class Consultas extends Component {
                             <input type="text" class="form-control input-consulta" placeholder="Telefono" />
                         </div>
                     </div>
-                    <h2 className="text-center mt-3">Sobre su Mascota</h2>
+                    <h2 className="text-center mt-3 font-weight-bold">Sobre su Mascota</h2>
                     <div class="row py-3 justify-content-around">
                         <div class="form-group col-md-5">
                             <label>Especie</label>
@@ -70,6 +70,9 @@ export default class Consultas extends Component {
                             <label>Escriba su consulta aquí</label>
                             <textarea class="form-control textarea-consulta" rows="5"></textarea>
                         </div>
+                    </div>
+                    <div className="text-center">
+                        <button className="btn btn-info">Enviar Consulta</button>
                     </div>
                 </form>
             </div>
