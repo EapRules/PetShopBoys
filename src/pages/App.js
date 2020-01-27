@@ -1,13 +1,19 @@
 import React from 'react';
 import Navbar from '../Components/Header/Navbar/Navbar';
-import Landing from '../Components/Landing/Landing';
+import Slider from '../Components/Landing/Slider/Slider';
+import Services from '../Components/Landing/Services/Services';
+import Market from '../Components/Landing/Market/Market';
 import Footer from '../Components/Footer/Footer';
+import ProductList from '../Components/Admin-Page/Product-list/Product-list';
+import Sidebar from '../Components/Admin-Page/Sidebar/Sidebar';
+import Consultas from '../Components/Consultas/Consultas';
+
 import {
   BrowserRouter as Router,
+  Switch,
   Route,
   Link
 } from "react-router-dom";
-import Consultas from '../Components/Consultas/Consultas';
 
 function App() {
   return (
