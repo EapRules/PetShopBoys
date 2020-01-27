@@ -6,7 +6,7 @@ export default class Consultas extends Component {
         return (
             <div className="container">
                 <h1 className="text-center main-title">Consulta</h1>
-                <div className="contenedor-aclaraciones my-3 p-2">
+                <div className="contenedor-aclaraciones my-4 p-2">
                     <span>Consultas veterinarias:</span>
                     <p>
                         En esta sección podemos atender sus consultas sobre el cuidado de sus mascotas, perros y gatos. Si desea realizar una pregunta relacionada con la salud, alimentación o bienestar de sus mascotas, complete el formulario con todos sus datos y le enviaremos una respuesta lo más rápido posible.
