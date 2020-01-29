@@ -2,6 +2,26 @@ import React, { Component } from 'react'
 // import styles from './Navbar.scss';
 import Login from '../Login/Auth';
 export default class Navbar extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoggedIn: false
+    }
+  }
+
+  componentDidMount() {
+    const token = localStorage.getItem('token')
+    this.setState({ isLoggedIn: token ? true : false })
+  }
+
+  logOut = e => {
+    e.preventDefault();
+    localStorage.removeItem('token');
+    window.location.reload()
+  }
+
+
   render() {
     return (
       <div>
@@ -28,9 +48,13 @@ export default class Navbar extends Component {
                 <a className="nav-link" href="http://localhost:3000">Consulta</a>
               </li>
               <li className="nav-item">
-                <button type="button" className="btn btn-success btn-sm" data-toggle="modal" data-target="#staticBackdrop">
-                  <i className="fas fa-user-circle"></i> Ingresar
-                </button>
+                {
+                  this.state.isLoggedIn
+                    ? <button className='btn btn-secondary btn-sm' onClick={this.logOut}>Cerrar Sesion</button>
+                    : <button type="button" className="btn btn-success btn-sm" data-toggle="modal" data-target="#staticBackdrop">
+                      <i className="fas fa-user-circle"></i> Ingresar
+                </button>}
+
               </li>
             </ul>
           </div>

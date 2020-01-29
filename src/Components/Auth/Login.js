@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import $ from 'jquery'
+// import $ from 'jquery'
 import jwt from 'jsonwebtoken'
 
 export default class Login extends Component {
@@ -12,12 +12,12 @@ export default class Login extends Component {
   }
 
   componentDidMount() {
-    const localToken = localStorage.getItem('token') || null
-    if (localToken) {
-      this.onSubmit();
-      const decoded = jwt.decode(localToken);
-      decoded.isAdmin ? console.log("Se logueó un Admin") : console.log("Se logueó un pleb");
-    }
+    // const localToken = localStorage.getItem('token') || null
+    // if (localToken) {
+    // this.onSubmit();
+    // const decoded = jwt.decode(localToken);
+    // decoded.isAdmin ? console.log("Se logueó un Admin") : console.log("Se logueó un pleb");
+    // }
   }
 
   closeAllModals = () => {
@@ -44,6 +44,8 @@ export default class Login extends Component {
     for (let i = 0; i < modalsBackdrops.length; i++) {
       document.body.removeChild(modalsBackdrops[i]);
     }
+
+    window.location.reload()
   }
 
   handleChange = obj => {
@@ -51,24 +53,22 @@ export default class Login extends Component {
     this.setState({ [name]: value });
   };
 
-  onSubmit = async obj => {
+  onSubmit = obj => {
     if (obj) {
       obj.preventDefault();
     }
 
-    const response = await fetch(
-      "http://192.168.1.114:4000/signin",
-      {
-        method: "POST",
-        body: JSON.stringify(this.state),
-        headers: { "Content-Type": "application/json" }
+    fetch("https://rolling-pet-shop.herokuapp.com/signin", { method: "POST", body: JSON.stringify(this.state), headers: { "Content-Type": "application/json" } })
+      .then(res => (res.json()))
+      .then(data => {
+        console.log(data);
+        localStorage.setItem("token", data.token);
+        this.closeAllModals()
+        // window.location.reload()
       }
-    );
-    const res = await response.json();
-    if (res.token) {
-      localStorage.setItem("token", res.token)
-      this.closeAllModals()
-    }
+      )
+      .catch(err => console.log('HAHA NOPE', err.message))
+
     //  document.getElementById('staticBackdrop').modal('toggle')
   };
 
@@ -88,7 +88,7 @@ export default class Login extends Component {
             onChange={this.handleChange}
           />
           <small id="emailHelp" className="form-text text-muted">
-            No la usaremos para enviarte spam. Lo prometemos! 🤞.
+            No la usaremos para enviarte spam. Lo prometemos! <span role='img' aria-label='Vamos a volver'>🤞</span>.
                          </small>
         </div>
         <div className="form-group">

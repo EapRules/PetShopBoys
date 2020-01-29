@@ -13,7 +13,7 @@ export default class MarketCard extends Component {
                 <div className="card-body">
                     <h5 className="card-title">{this.props.title} - ${this.props.price}</h5>
                     <p style={{ height: 50 }} className="card-text text-truncate">{this.props.body}</p>
-                    <button className="btn btn-success" onClick={() => { this.props.addProduct(this.props.title, this.props.price) }}><i className="fas fa-shopping-cart"></i> Agregar</button>
+                    <button className="btn btn-success" onClick={() => { this.props.addProduct(this.props.title, this.props.price) }}><i className="fas fa-shopping-cart"></i> Ir a la tienda</button>
                 </div>
             </div>
         )
