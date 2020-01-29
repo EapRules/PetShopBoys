@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import styles from './Navbar.scss';
+import { Link } from 'react-router-dom'
 import Login from '../Login/Auth';
 export default class Navbar extends Component {
 
@@ -26,20 +26,20 @@ export default class Navbar extends Component {
     return (
       <div>
         <div className="alert alert-success text-center" role="alert">
-          <p className="text-danger"> EMERGENCIAS - 0800-234-2345</p>
+          <p className="text-dark">EMERGENCIAS: <a href='tel:0800-0303-456'>0800-0303-456</a></p>
         </div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <a className="navbar-brand" href="http://localhost:3000">
-            <img src="../../../images/logo.png" width="30" height="30" className="d-inline-block align-top" alt="" />
+          <Link to='/' className="navbar-brand">
+            <img src={process.env.PUBLIC_URL + `./img/logo.png`} width="30" height="30" className="d-inline-block align-top" alt="Logo Petchop" />
             PetShopBoys
-  </a>
+  </Link>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <a className="nav-link" href="http://localhost:3000">Tienda</a>
+                <Link to='/tienda' className="nav-link">Tienda</Link>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="http://localhost:3000">Turno</a>

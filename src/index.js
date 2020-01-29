@@ -4,6 +4,11 @@ import './index.css';
 import App from './pages/App';
 import * as serviceWorker from './serviceWorker';
 
+// Importing styles
+
+import './Components/Header/Navbar/Navbar.scss';
+
+
 import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.getElementById('root'));

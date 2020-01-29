@@ -13,7 +13,7 @@ export class FullMarket extends Component {
     render() {
         return (
             <div>
-
+                <h1 className="display-4">Esta es la tienda</h1>
             </div>
         )
     }

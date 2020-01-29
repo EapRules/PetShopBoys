@@ -18,13 +18,13 @@ import FullMarket from './FullMarket'
 function App() {
   return (
     <div className="App">
-      <Navbar />
       <Router>
-        <Route exact path='/' component={Home} />
+        <Navbar />
+        <Route exact path='/' render={() => (<Home />)} />
         {/* <Route exact path='/login' component={Home} /> */}
-        <Route exact path='/tienda' component={FullMarket} />
+        <Route exact path='/tienda' render={() => (<FullMarket />)} />
+        <Footer />
       </Router>
-      <Footer />
     </div>
   );
 }
