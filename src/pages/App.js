@@ -1,40 +1,30 @@
 import React from 'react';
-import Navbar from '../Components/Header/Navbar/Navbar';
-import Slider from '../Components/Slider/Slider';
-import Services from '../Components/Services/Services';
-import Market from '../Components/Market/Market';
-import Footer from '../Components/Footer/Footer';
-import ProductList from '../Components/Admin-Page/Product-list/Product-list';
-import Sidebar from '../Components/Admin-Page/Sidebar/Sidebar';
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
+// Importing web layout
+
+import Navbar from '../Components/Header/Navbar/Navbar';
+import Footer from '../Components/Footer/Footer';
+
+// Importing React Router
+
+import { BrowserRouter as Router, Route, withRouter } from "react-router-dom";
+
+// Importing Pages
+
+import Home from './Home'
+import FullMarket from './FullMarket'
+
 
 function App() {
   return (
     <div className="App">
-
+      <Navbar />
       <Router>
-        <main>
-          <Navbar />
-          <Switch>
-            <Route exact path="/">
-              <Slider />
-              <Services />
-              <Market />
-            </Route>
-            <Route exact path="/admin" component={Sidebar}>
-            </Route>
-            <Route exact path="/admin/productos" component={Sidebar, ProductList}>
-
-            </Route>
-          </Switch>
-          <Footer />
-        </main>
+        <Route exact path='/' component={Home} />
+        {/* <Route exact path='/login' component={Home} /> */}
+        <Route exact path='/tienda' component={FullMarket} />
       </Router>
+      <Footer />
     </div>
   );
 }

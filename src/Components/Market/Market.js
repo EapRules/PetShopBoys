@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { Redirect } from 'react-router-dom'
 import MarketCard from './Card'
+import YouTube from 'react-youtube'
 
 export default class Market extends Component {
 
@@ -27,12 +28,21 @@ export default class Market extends Component {
         if (this.state.isLoggedIn) {
             console.log("te compraste todo")
         } else {
-            window.location.href = '/login'
+            // window.location.href = '/login'
+            console.log("No te compraste nada")
         }
     }
 
     render() {
-        if (this.state.redirectToLogin) { return <Redirect to='/login' /> }
+        let opts = {
+            width: '360',
+            playerVars: {
+                autoplay: 1,
+                loop: 1,
+                mute: 1
+            }
+        }
+        // if (this.state.redirectToLogin) { return <Redirect to='/login' /> }
         return (
             <Fragment>
                 <div className='container'>
@@ -41,7 +51,7 @@ export default class Market extends Component {
                             <div className="row ">
                                 <div className="col my-2"><MarketCard addProduct={(name, price) => { this.addProduct(name, price) }} price="40" imgUrl='https://www.dhresource.com/webp/m/0x0s/f2-albu-g2-M01-AD-C9-rBVaG1Zd3eWAeSuqAADlCEZxRbk441.jpg/baby-dog-toys-pet-toys-puppy-dog-and-cat.jpg' title='Pelotita' body='Rebota mucho' /> </div>
                                 <div className="col my-2"><MarketCard addProduct={(name, price) => { this.addProduct(name, price) }} price="52" imgUrl='https://www.joopzy.com/wp-content/uploads/2019/01/Cute-Pet-Dog-Toys-Chew-Squeaker-Animals-Pet-Toys-Plush-Puppy-Honking-Squirrel-For-Dogs-Cat-768x768.jpg' title='Mordedor' body='Hace cuack cuando lo muerde' /> </div>
-                                <div className="col my-2"><MarketCard addProduct={(name, price) => { this.addProduct(name, price) }} price="30" imgUrl='https://dynamic.indigoimages.ca/gifts/848404112284.jpg?quality=10&width=320&maxheight=320&lang=en' title='Peresozo' body='Muy posiblemente como vos' /> </div>
+                                <div className="col my-2"><MarketCard addProduct={(name, price) => { this.addProduct(name, price) }} price="30" imgUrl='https://i.ebayimg.com/images/g/dYYAAOSwtRNdgL-J/s-l300.jpg' title='Mordedor' body='Muy posiblemente como vos' /> </div>
                             </div>
                             <div className="row">
                                 <div className="col my-2"><MarketCard addProduct={(name, price) => { this.addProduct(name, price) }} price="42" imgUrl='https://www.dhresource.com/webp/m/0x0s/f2-albu-g5-M00-23-45-rBVaI1nd2ViAQ_jsAAJAfIAdDYM207.jpg/fashion-plastic-dog-toys-pet-treasure-hunting.jpg' title='Otro mordedor' body='Parece pista de hotwils jajajaj' /> </div>
@@ -68,8 +78,11 @@ export default class Market extends Component {
                                     <p className="lead">12 cuotas sin interes!</p>
                                 </div>
                             </div>
+                            {/* Starts */}
                             <div >
-                                <div className='row'>
+                                <YouTube videoId='3a9ncMJLMXg' opts={opts} className='mt-3' />
+                                <YouTube videoId='bvFhnfzb85c' opts={opts} className='mt-5' />
+                                {/* <div className='row'>
                                     <div className="col">
                                         <h1 className="lead">Carrito de compras:</h1>
                                     </div>
@@ -100,12 +113,13 @@ export default class Market extends Component {
                                 </div>
                                 <div className={this.state.buy ? 'd-block' : 'd-none'}>
 
-                                </div>
+                                </div> */}
                             </div>
+                            {/* Ends */}
                         </div>
                     </div>
                 </div >
-            </Fragment>
+            </Fragment >
         )
     }
 }
