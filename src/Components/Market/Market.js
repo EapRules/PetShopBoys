@@ -27,12 +27,13 @@ export default class Market extends Component {
         if (this.state.isLoggedIn) {
             console.log("te compraste todo")
         } else {
-            window.location.href = '/login'
+            // window.location.href = '/login'
+            console.log("No te compraste nada")
         }
     }
 
     render() {
-        if (this.state.redirectToLogin) { return <Redirect to='/login' /> }
+        // if (this.state.redirectToLogin) { return <Redirect to='/login' /> }
         return (
             <Fragment>
                 <div className='container'>
