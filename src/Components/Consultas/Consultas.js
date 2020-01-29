@@ -53,22 +53,22 @@ export default class Consultas extends Component {
                                 <option>Otro</option>
                             </select>
                         </div>
-                        <div class="form-group col-md-5">
+                        <div className="form-group col-md-5">
                             <label>Sexo</label>
-                            <select class="form-control">
+                            <select className="form-control">
                                 <option selected>Masculino</option>
                                 <option>Femenino</option>
                             </select>
                         </div>
-                        <div class="col-5">
-                            <input type="text" class="form-control input-consulta" placeholder="Raza de la mascota" />
+                        <div className="col-5">
+                            <input type="text" className="form-control input-consulta" placeholder="Raza de la mascota" />
                         </div>
-                        <div class="col-5">
-                            <input type="text" class="form-control input-consulta" placeholder="Nombre de la mascota" />
+                        <div className="col-5">
+                            <input type="text" className="form-control input-consulta" placeholder="Nombre de la mascota" />
                         </div>
-                        <div class="form-group my-5">
+                        <div className="form-group my-5">
                             <label>Escriba su consulta aquí</label>
-                            <textarea class="form-control textarea-consulta" rows="5"></textarea>
+                            <textarea className="form-control textarea-consulta" rows="5"></textarea>
                         </div>
                     </div>
                     <div className="text-center">
