@@ -6,6 +6,7 @@ import Market from '../Components/Market/Market';
 import Footer from '../Components/Footer/Footer';
 import ProductList from '../Components/Admin-Page/Product-list/Product-list';
 import Sidebar from '../Components/Admin-Page/Sidebar/Sidebar';
+import AddProduct from '../Components/Admin-Page/Add-product/Add-product';
 
 import {
   BrowserRouter as Router,
@@ -17,7 +18,9 @@ function App() {
   return (
     <div className="App">
 
-      <Router>
+
+<AddProduct></AddProduct>
+      {/* <Router>
         <main>
           <Navbar />
           <Switch>
@@ -29,12 +32,11 @@ function App() {
             <Route exact path="/admin" component={Sidebar}>
             </Route>
             <Route exact path="/admin/productos" component={Sidebar, ProductList}>
-
             </Route>
           </Switch>
           <Footer />
         </main>
-      </Router>
+      </Router> */}
     </div>
   );
 }
