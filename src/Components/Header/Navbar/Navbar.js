@@ -32,7 +32,7 @@ export default class Navbar extends Component {
           <Link to='/' className="navbar-brand">
             <img src={process.env.PUBLIC_URL + `./img/logo.png`} width="30" height="30" className="d-inline-block align-top" alt="Logo Petchop" />
             PetShopBoys
-  </Link>
+            </Link>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -50,7 +50,18 @@ export default class Navbar extends Component {
               <li className="nav-item">
                 {
                   this.state.isLoggedIn
-                    ? <button className='btn btn-secondary btn-sm' onClick={this.logOut}>Cerrar Sesion</button>
+                    ? <div class="btn-group dropleft">
+                      <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropleft
+                    </button>
+                      <div className="dropdown-menu">
+                        <button className='dropdown-item' onClick={this.logOut}>Perfil</button>
+                        <button className='dropdown-item' onClick={this.logOut}>Cerrar Sesion</button>
+                      </div>
+                    </div>
+
+
+
                     : <button type="button" className="btn btn-success btn-sm" data-toggle="modal" data-target="#staticBackdrop">
                       <i className="fas fa-user-circle"></i> Ingresar
                 </button>}

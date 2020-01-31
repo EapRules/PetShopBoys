@@ -70,6 +70,7 @@ export default class Login extends Component {
   render() {
     return (
       <form onSubmit={this.onSubmit}>
+        <h2>Login</h2>
         <div className="form-group">
           <label htmlFor="exampleInputEmail1">
             Dirección de correo
