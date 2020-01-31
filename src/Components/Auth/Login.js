@@ -40,6 +40,8 @@ export default class Login extends Component {
         document.body.removeChild(modalsBackdrops[i]);
         window.location.reload()
       }
+    } else {
+      console.log('Error')
     }
   }
 
@@ -58,9 +60,9 @@ export default class Login extends Component {
       .then(res => (res.json()))
       .then(data => {
         console.log(data);
-        data.token ? localStorage.setItem("token", data.token) : this.setState({ message: data.message })
+        data.token ? localStorage.setItem("token", data.token) : this.setState({ message: data.mesagge })
         this.closeAllModals()
-        window.location.reload()
+        // window.location.reload()
       }
       )
       .catch(err => console.log('HAHA NOPE', err.message))
@@ -83,7 +85,7 @@ export default class Login extends Component {
             value={this.state.username}
             onChange={this.handleChange}
           />
-          {this.state.message ? <small id="emailHelp" className="form-text text-muted"> {this.state.message}. </small> : null}
+          {this.state.message ? <small id="emailHelp" className="form-text text-danger"> {this.state.message}. </small> : null}
         </div>
         <div className="form-group">
           <label htmlFor="exampleInputPassword1">Contraseña</label>
