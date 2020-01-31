@@ -7,7 +7,8 @@ export default class Login extends Component {
     super(props);
     this.state = {
       username: "",
-      password: ""
+      password: "",
+      message: ""
     };
   }
 
@@ -22,20 +23,27 @@ export default class Login extends Component {
 
   closeAllModals = () => {
 
-    const modals = document.getElementsByClassName('modal');
-    for (let i = 0; i < modals.length; i++) {
-      modals[i].classList.remove('show');
-      document.body.classList.remove('modal-open')
-      modals[i].setAttribute('aria-hidden', 'true');
-      modals[i].setAttribute('style', 'display: none');
-    }
-    const modalsBackdrops = document.getElementsByClassName('modal-backdrop');
-    for (let i = 0; i < modalsBackdrops.length; i++) {
-      document.body.removeChild(modalsBackdrops[i]);
-    }
+    if (localStorage.getItem('token')) {
 
-    window.location.reload()
+      const modals = document.getElementsByClassName('modal');
+      const modalsBackdrops = document.getElementsByClassName('modal-backdrop');
+
+      for (let i = 0; i < modals.length; i++) {
+        modals[i].classList.remove('show');
+        document.body.classList.remove('modal-open')
+        modals[i].setAttribute('aria-hidden', 'true');
+        modals[i].setAttribute('style', 'display: none');
+      }
+
+
+      for (let i = 0; i < modalsBackdrops.length; i++) {
+        document.body.removeChild(modalsBackdrops[i]);
+        window.location.reload()
+      }
+    }
   }
+
+
   handleChange = obj => {
     let { name, value } = obj.target;
     this.setState({ [name]: value });
@@ -50,9 +58,9 @@ export default class Login extends Component {
       .then(res => (res.json()))
       .then(data => {
         console.log(data);
-        localStorage.setItem("token", data.token);
+        data.token ? localStorage.setItem("token", data.token) : this.setState({ message: data.message })
         this.closeAllModals()
-        // window.location.reload()
+        window.location.reload()
       }
       )
       .catch(err => console.log('HAHA NOPE', err.message))
@@ -74,9 +82,7 @@ export default class Login extends Component {
             value={this.state.username}
             onChange={this.handleChange}
           />
-          <small id="emailHelp" className="form-text text-muted">
-            No la usaremos para enviarte spam. Lo prometemos! <span role='img' aria-label='Vamos a volver'>🤞</span>.
-                         </small>
+          {this.state.message ? <small id="emailHelp" className="form-text text-muted"> {this.state.message}. </small> : null}
         </div>
         <div className="form-group">
           <label htmlFor="exampleInputPassword1">Contraseña</label>
@@ -92,9 +98,7 @@ export default class Login extends Component {
         <button
           type="submit"
           className="btn btn-success w-100 mt-4"
-        >
-          Registro
-                       </button>
+        >Iniciar sesión</button>
       </form>
     );
   }
