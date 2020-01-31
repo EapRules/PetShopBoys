@@ -22,32 +22,20 @@ export default class Login extends Component {
 
   closeAllModals = () => {
 
-
-    // $("#myModal").modal("hide");
-
-
-    // get modals
     const modals = document.getElementsByClassName('modal');
-
-    // on every modal change state like in hidden modal
     for (let i = 0; i < modals.length; i++) {
       modals[i].classList.remove('show');
       document.body.classList.remove('modal-open')
       modals[i].setAttribute('aria-hidden', 'true');
       modals[i].setAttribute('style', 'display: none');
     }
-
-    // get modal backdrops
     const modalsBackdrops = document.getElementsByClassName('modal-backdrop');
-
-    // remove every modal backdrop
     for (let i = 0; i < modalsBackdrops.length; i++) {
       document.body.removeChild(modalsBackdrops[i]);
     }
 
     window.location.reload()
   }
-
   handleChange = obj => {
     let { name, value } = obj.target;
     this.setState({ [name]: value });
@@ -71,7 +59,6 @@ export default class Login extends Component {
 
     //  document.getElementById('staticBackdrop').modal('toggle')
   };
-
   render() {
     return (
       <form onSubmit={this.onSubmit}>
@@ -106,7 +93,7 @@ export default class Login extends Component {
           type="submit"
           className="btn btn-success w-100 mt-4"
         >
-          Logeo
+          Registro
                        </button>
       </form>
     );
