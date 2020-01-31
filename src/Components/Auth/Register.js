@@ -42,7 +42,7 @@ export default class Register extends Component {
                 <h2>Registro</h2>
                 <div className="form-group">
                     <label htmlFor="exampleInputEmail1">Dirección de correo</label>
-                    <input type="text" className="form-control" name='username' value={this.state.username} onChange={this.handleChange} />
+                    <input type="email" className="form-control" name='username' value={this.state.username} onChange={this.handleChange} />
                 </div>
 
                 <div className="form-group">

@@ -78,7 +78,7 @@ export default class Login extends Component {
             Dirección de correo
                          </label>
           <input
-            type="text"
+            type="email"
             className="form-control"
             placeholder="Ingrese su mail"
             name="username"
