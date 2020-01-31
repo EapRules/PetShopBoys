@@ -75,12 +75,11 @@ export default class Login extends Component {
         <h2>Login</h2>
         <div className="form-group">
           <label htmlFor="exampleInputEmail1">
-            Dirección de correo
+            Nombre de Usuario
                          </label>
           <input
-            type="email"
+            type="text"
             className="form-control"
-            placeholder="Ingrese su mail"
             name="username"
             value={this.state.username}
             onChange={this.handleChange}
@@ -92,7 +91,6 @@ export default class Login extends Component {
           <input
             type="password"
             className="form-control"
-            placeholder="Ingrese su contraseña"
             name="password"
             value={this.state.password}
             onChange={this.handleChange}

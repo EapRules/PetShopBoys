@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Login from '../Login/Auth';
+import Profile from '../../Auth/Profile';
 export default class Navbar extends Component {
 
   constructor(props) {
@@ -55,21 +56,20 @@ export default class Navbar extends Component {
                         Dropleft
                     </button>
                       <div className="dropdown-menu">
-                        <button className='dropdown-item' onClick={this.logOut}>Perfil</button>
+                        <button className="dropdown-item" data-toggle="modal" data-target="#Profile">
+                          Perfil
+                        </button>
                         <button className='dropdown-item' onClick={this.logOut}>Cerrar Sesion</button>
                       </div>
                     </div>
-
-
-
                     : <button type="button" className="btn btn-success btn-sm" data-toggle="modal" data-target="#staticBackdrop">
                       <i className="fas fa-user-circle"></i> Ingresar
                 </button>}
-
               </li>
             </ul>
           </div>
         </nav>
+        <Profile></Profile>
         <Login></Login>
       </div>
     )
