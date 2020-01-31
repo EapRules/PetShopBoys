@@ -12,7 +12,7 @@ import { BrowserRouter as Router, Route, withRouter } from "react-router-dom";
 // Importing Pages
 
 import Home from './Home'
-import FullMarket from './FullMarket'
+import FullMarket from '../Components/Market/FullMarket'
 
 
 function App() {
