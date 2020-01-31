@@ -85,7 +85,7 @@ export default class Login extends Component {
             value={this.state.username}
             onChange={this.handleChange}
           />
-          {this.state.message ? <small id="emailHelp" className="form-text text-danger"> {this.state.message}. </small> : null}
+
         </div>
         <div className="form-group">
           <label htmlFor="exampleInputPassword1">Contraseña</label>
@@ -98,6 +98,7 @@ export default class Login extends Component {
             onChange={this.handleChange}
           />
         </div>
+        {this.state.message ? <small id="emailHelp" className="form-text text-danger"> {this.state.message}. </small> : null}
         <button
           type="submit"
           className="btn btn-success w-100 mt-4"
