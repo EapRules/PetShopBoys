@@ -35,7 +35,7 @@ export default class Footer extends Component {
                   </li>
                   <li>
                     <p>
-                      <a className="" href="#!">Sobre Nosotros</a>
+                      <a className="" href="#!">Turno </a>
                     </p>
                   </li>
                   <li>
@@ -64,7 +64,7 @@ export default class Footer extends Component {
                   </li>
                   <li>
                     <p>
-                      <i className="fas fa-envelope mr-3"></i> info@petshopboys.com</p>
+                      <i className="fas fa-envelope mr-3"></i> info@Petshops.com</p>
                   </li>
                   <li>
                     <p>
