@@ -13,11 +13,37 @@
     };
 }
 .form-group{
-    .form-control, .input-consulta{
+    .form-control{
         border: none;
-        border-bottom: 2px solid green !important;
+        background: #F8F9FA;
+        border-bottom: 2px solid #D4EDDA !important;
     }
 }
-.textarea-consulta{
-    width: 50vw;
+input[type=text], input[type=email] {
+    border: none;
+    background: #F8F9FA;
+    border-bottom: 2px solid #D4EDDA !important;
+    &:focus{
+        background: #dfdfdf;
+    }
+  }
+  .textarea-consulta{
+        width: 50vw !important;
+  }
+textarea:hover, 
+input:hover, 
+textarea:active, 
+input:active, 
+textarea:focus, 
+input:focus,
+button:focus,
+button:active,
+button:hover,
+label:focus,
+.btn:active,
+.btn.active
+{
+    outline:0px !important;
+    -webkit-appearance:none;
+    box-shadow: none !important;
 }
