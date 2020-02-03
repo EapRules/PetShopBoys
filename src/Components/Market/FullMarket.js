@@ -95,7 +95,7 @@ export class FullMarket extends Component {
                                 </div>
                             </div>
                             <div>
-                                <button onClick={this.handleBuy} className={this.state.isLoggedIn ? 'btn w-100 btn-success' : 'btn w-100 btn-danger'}>{this.state.isLoggedIn ? 'Realizar compra' : 'Debe iniciar sesion para comprar'}</button>
+                                <button data-toggle={!this.state.isLoggedIn ? "modal" : null} data-target={!this.state.isLoggedIn ? "#staticBackdrop" : null} onClick={this.handleBuy} className={this.state.isLoggedIn ? 'btn w-100 btn-success' : 'btn w-100 btn-danger'}>{this.state.isLoggedIn ? 'Realizar compra' : 'Debe iniciar sesion para comprar'}</button>
                             </div>
                             <div className={this.state.buy ? 'd-block' : 'd-none'}>
 
