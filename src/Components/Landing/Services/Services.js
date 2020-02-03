@@ -18,23 +18,23 @@ class Services extends Component {
 
                     <div className="col-lg-4 col-sm-12 text-center p-3">
 
-                        <div class="card text-center" style={{ width: '18rem' }}>
+                        <div className="card text-center" style={{ width: '18rem' }}>
                             <img src={imagen3} class="card-img-top" alt="..."></img>
-                            <div class="card-body">
-                                <h5 class="card-title">Consulta</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Saber +</a>
+                            <div className="card-body">
+                                <h5 className="card-title">Consulta</h5>
+                                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" className="btn btn-primary">Saber +</a>
                             </div>
                         </div>
                     </div>
 
                     <div className="col-lg-4 col-sm-12 text-center p-3">
-                        <div class="card text-center" style={{ width: '18rem' }}>
+                        <div className="card text-center" style={{ width: '18rem' }}>
                             <img src={imagen7} class="card-img-top" alt="..."></img>
-                            <div class="card-body">
-                                <h5 class="card-title">Estetica</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Saber +</a>
+                            <div className="card-body">
+                                <h5 className="card-title">Estetica</h5>
+                                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" className="btn btn-primary">Saber +</a>
                             </div>
                         </div>
                     </div>
@@ -82,45 +82,10 @@ class Services extends Component {
                             </div>
                         </div>
                     </div>
-
-
-
-                    {/*                   
-                    <div className="col-lg-4 col-sm-12 text-center p-3">
-                        <h3 id="services">Estetica</h3>
-                        <img src={imagen7} class="d-block w-100" alt="..." />
-
-                    </div>
-
-                    <div className="col-lg-4 col-sm-12 text-center p-3">
-                        <h3 id="services">Cirugia</h3>
-                        <img src={imagen6} class="d-block w-100" alt="..." />
-
-                    </div>
-
-                    <div className="col-lg-4 col-sm-12 text-center p-3">
-                        <h3 id="services">Internacion</h3>
-                        <img src={imagen5} class="d-block w-100" alt="..." />
-
-                    </div>
-
-                    <div className="col-lg-4 col-sm-12 text-center p-3">
-                        <h3 id="services">Vacunacion</h3>
-                        <img src={imagen1} class="d-block w-100" alt="..." />
-
-                    </div>
-
-                    <div className="col-lg-4 col-sm-12 text-center p-3">
-                        <h3 id="services">Radiofrafia</h3>
-                        <img src={imagen4} class="d-block w-100" alt="..." />
-
-                    </div> */}
-
                 </div>
 
             </div>
         );
-
     }
 }
 
