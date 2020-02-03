@@ -20,7 +20,7 @@ export default class Register extends Component {
 
         const response = await fetch(
             // "https://rolling-pet-shop.herokuapp.com/signup",
-            "http://192.168.1.114:4000/signup",
+            "https://rolling-pet-shop.herokuapp.com/signup",
             {
                 method: "POST",
                 body: JSON.stringify(this.state),

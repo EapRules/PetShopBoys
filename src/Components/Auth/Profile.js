@@ -22,7 +22,7 @@ export default class Profile extends Component {
     }
 
     const response = await fetch(
-      "http://192.168.1.114:4000/profiles/signup",
+      "https://rolling-pet-shop.herokuapp.com/profiles/signup",
       {
         method: "POST",
         body: JSON.stringify(this.state),
