@@ -56,14 +56,6 @@ export default class Consultas extends Component {
         let user_id = "user_Nmod0HqZC8hWaM1GNTMOl";
         
         emailjs.send(service_id, template_id, templateParams, user_id)
-        .then(function(response){
-            toastr.success('Mensaje enviado exitosamente!')
-            console.log('SUCCESS!', response.status, response.text)   
-        }, function(err){
-            toastr.error(err)
-            console.log(err);
-            
-        })
     }
 
 
@@ -123,8 +115,8 @@ export default class Consultas extends Component {
                             <label>Sexo</label>
                             <select className="form-control" name="sex" required="required" onChange={this.handleInputChange.bind(this)} value={this.state.sex}>
                                 <option selected>Elegir...</option>
-                                <option value="Masculino">Masculino</option>
-                                <option value="Femenino">Femenino</option>
+                                <option value="Masculino">Macho</option>
+                                <option value="Femenino">Hembra</option>
                             </select>
                         </div>
                         <div className="col-5">
