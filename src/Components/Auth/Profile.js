@@ -21,13 +21,18 @@ export default class Profile extends Component {
     }
 
     const response = await fetch(
-      "https://rolling-pet-shop.herokuapp.com/profiles/signup/",
+      "http://192.168.1.114:4000/profiles/signup",
       {
         method: "POST",
         body: JSON.stringify(this.state),
-        headers: { "Content-Type": "application/json" }
+        headers: {
+          "Content-Type": "application/json",
+          "authorization": `Bearer ${localStorage.getItem("token")}`
+        }
       }
     );
+
+
     const res = await response.json();
     if (res.token) {
       localStorage.setItem("token", res.token)
