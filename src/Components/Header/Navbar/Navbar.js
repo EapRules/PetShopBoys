@@ -53,7 +53,11 @@ export default class Navbar extends Component {
                   this.state.isLoggedIn
                     ? <div class="btn-group dropleft">
                       <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<<<<<<< HEAD
                         Usuario
+=======
+                        <i className="fas fa-user-circle"></i>  Perfil
+>>>>>>> e087664b8d285ba02f58a085e58f1f1212b24f80
                     </button>
                       <div className="dropdown-menu">
                         <button className="dropdown-item" data-toggle="modal" data-target="#Profile">

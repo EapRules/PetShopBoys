@@ -21,7 +21,7 @@ export default class Profile extends Component {
     }
 
     const response = await fetch(
-      "http://192.168.1.114:4000/usuarios/signup/profile",
+      "https://rolling-pet-shop.herokuapp.com/profiles/signup/",
       {
         method: "POST",
         body: JSON.stringify(this.state),
@@ -54,7 +54,7 @@ export default class Profile extends Component {
                 <h2>Datos Personales</h2>
                 <div className="form-group mt-5">
                   <label htmlFor="exampleInputEmail1">Nombre</label>
-                  <input type="email" className="form-control" name='name' value={this.state.username} onChange={this.handleChange} />
+                  <input type="text" className="form-control" name='name' value={this.state.username} onChange={this.handleChange} />
                 </div>
 
                 <div className="form-group">
