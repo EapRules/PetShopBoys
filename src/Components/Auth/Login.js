@@ -56,7 +56,10 @@ export default class Login extends Component {
       obj.preventDefault();
     }
 
-    fetch("https://rolling-pet-shop.herokuapp.com/signin", { method: "POST", body: JSON.stringify(this.state), headers: { "Content-Type": "application/json" } })
+    fetch(
+      // "https://rolling-pet-shop.herokuapp.com/signin",
+      "http://192.168.1.114:4000/signin",
+      { method: "POST", body: JSON.stringify(this.state), headers: { "Content-Type": "application/json" } })
       .then(res => (res.json()))
       .then(data => {
         console.log(data);
