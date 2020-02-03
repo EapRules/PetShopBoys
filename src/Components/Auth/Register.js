@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Swal from 'sweetalert2'
 
 export default class Register extends Component {
     constructor(props) {
@@ -30,10 +31,22 @@ export default class Register extends Component {
         if (res.token) {
             localStorage.setItem("token", res.token)
             console.log(res.token)
-            alert("usuario creado satisfactoriamente")
+
+            Swal.fire({
+                icon: 'success',
+                title: 'usuario creado exitosamente',
+                showConfirmButton: false,
+                timer: 1500
+            })
         }
         else {
-            alert(res.message)
+            Swal.fire({
+                icon: 'error',
+                title: `${res.message}`,
+                showConfirmButton: false,
+                timer: 1500
+            })
+
         }
 
     };

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Swal from 'sweetalert2'
 
 export default class Profile extends Component {
   constructor(props) {
@@ -32,16 +33,13 @@ export default class Profile extends Component {
       }
     );
 
-
     const res = await response.json();
-    if (res.token) {
-      localStorage.setItem("token", res.token)
-      console.log(res.token)
-      alert("Datos guardados satisfactoriamente")
-    }
-    else {
-      alert(res.message)
-    }
+    Swal.fire({
+      icon: 'success',
+      title: `${res.message}`,
+      showConfirmButton: false,
+      timer: 1500
+    })
 
   };
   render() {
