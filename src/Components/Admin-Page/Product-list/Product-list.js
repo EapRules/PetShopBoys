@@ -15,7 +15,7 @@ export default class ProductList extends Component {
                 </div>
                 <div className="contenedor-lista">
                     <div className=" m-5">
-                        <table class="table table-dark">
+                        <table className="table table-dark">
                             <thead className="text-center">
                                 <tr>
                                     <th scope="col">#</th>
@@ -33,7 +33,7 @@ export default class ProductList extends Component {
                                     <td>@mdo</td>
                                     <td><img alt='text wachin' src="https://st4.depositphotos.com/12985848/20432/i/450/depositphotos_204322410-stock-photo-two-veterinarians-making-injection-pug.jpg" width="200px" height="80px" /></td>
                                     <button type="button" className="btn btn-success m-4">Publicar</button>
-                                    <button type="button" class="btn btn-danger">Eliminar</button>
+                                    <button type="button" className="btn btn-danger">Eliminar</button>
 
                                 </tr>
                                 <tr>
@@ -43,7 +43,7 @@ export default class ProductList extends Component {
                                     <td>@fat</td>
                                     <td><img alt='text wachin' src="https://st4.depositphotos.com/12985848/20432/i/450/depositphotos_204322410-stock-photo-two-veterinarians-making-injection-pug.jpg" width="200px" height="80px" /></td>
                                     <button type="button" className="btn btn-success m-4">Publicar</button>
-                                    <button type="button" class="btn btn-danger">Eliminar</button>
+                                    <button type="button" className="btn btn-danger">Eliminar</button>
 
                                 </tr>
                                 <tr>
@@ -53,7 +53,7 @@ export default class ProductList extends Component {
                                     <td>@twitter</td>
                                     <td><img alt='text wachin' src="https://st4.depositphotos.com/12985848/20432/i/450/depositphotos_204322410-stock-photo-two-veterinarians-making-injection-pug.jpg" width="200px" height="80px" /></td>
                                     <button type="button" className="btn btn-success m-4">Publicar</button>
-                                    <button type="button" class="btn btn-danger">Eliminar</button>
+                                    <button type="button" className="btn btn-danger">Eliminar</button>
 
                                 </tr>
                             </tbody>

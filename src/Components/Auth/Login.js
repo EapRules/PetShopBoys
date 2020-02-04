@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-// import $ from 'jquery'
 import jwt from 'jsonwebtoken'
+import closeAllModals from '../shared/CloseModals'
 
 export default class Login extends Component {
   constructor(props) {
@@ -20,32 +20,6 @@ export default class Login extends Component {
     // decoded.isAdmin ? console.log("Se logueó un Admin") : console.log("Se logueó un pleb");
     // }
   }
-
-  closeAllModals = () => {
-
-    if (localStorage.getItem('token')) {
-
-      const modals = document.getElementsByClassName('modal');
-      const modalsBackdrops = document.getElementsByClassName('modal-backdrop');
-
-      for (let i = 0; i < modals.length; i++) {
-        modals[i].classList.remove('show');
-        document.body.classList.remove('modal-open')
-        modals[i].setAttribute('aria-hidden', 'true');
-        modals[i].setAttribute('style', 'display: none');
-      }
-
-
-      for (let i = 0; i < modalsBackdrops.length; i++) {
-        document.body.removeChild(modalsBackdrops[i]);
-        window.location.reload()
-      }
-    } else {
-      console.log('Error')
-    }
-  }
-
-
   handleChange = obj => {
     let { name, value } = obj.target;
     this.setState({ [name]: value });
@@ -64,7 +38,7 @@ export default class Login extends Component {
       .then(data => {
         console.log(data);
         data.token ? localStorage.setItem("token", data.token) : this.setState({ message: data.mesagge })
-        this.closeAllModals()
+        closeAllModals()
         // window.location.reload()
       }
       )

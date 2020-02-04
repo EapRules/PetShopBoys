@@ -17,7 +17,6 @@ export default class Register extends Component {
         if (obj) {
             obj.preventDefault();
         }
-
         const response = await fetch(
             // "https://rolling-pet-shop.herokuapp.com/signup",
             "https://rolling-pet-shop.herokuapp.com/signup",
@@ -31,7 +30,6 @@ export default class Register extends Component {
         if (res.token) {
             localStorage.setItem("token", res.token)
             console.log(res.token)
-
             Swal.fire({
                 icon: 'success',
                 title: 'usuario creado exitosamente',
@@ -46,9 +44,7 @@ export default class Register extends Component {
                 showConfirmButton: false,
                 timer: 1500
             })
-
         }
-
     };
     render() {
         return (
@@ -58,14 +54,12 @@ export default class Register extends Component {
                     <label htmlFor="exampleInputEmail1">Nombre de Usuario</label>
                     <input type="text" className="form-control" name='username' value={this.state.username} onChange={this.handleChange} />
                 </div>
-
                 <div className="form-group">
                     <label htmlFor="exampleInputPassword1">Contraseña</label>
                     <input type="text" className="form-control" name='password' value={this.state.password} onChange={this.handleChange} />
                 </div>
-                <button type="submit" className="btn btn-success w-100 mt-4">Registrse</button>
+                <button type="submit" className="btn btn-success w-100 mt-4">Registrarse</button>
             </form>
-
         )
     }
 }
