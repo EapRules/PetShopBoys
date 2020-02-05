@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 // import $ from 'jquery'
-import jwt from 'jsonwebtoken'
+
 
 export default class Login extends Component {
   constructor(props) {
