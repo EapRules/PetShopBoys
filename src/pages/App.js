@@ -19,27 +19,25 @@ import {
 function App() {
   return (
     <div className="App">
-     
-     <Router>
+
+      <Router>
         <main>
           <Navbar />
-            <Switch>
+          <Switch>
             <Route exact path="/">
-              <Slider/>
+              <Slider />
               <Services />
               <Market />
-              </Route>
-              <Route exact path="/admin" component={Sidebar}>
-              </Route>
-              <Route exact path="/admin/productos" component={Sidebar,ProductList}>
-                
-              </Route>
-              <Route exact path="/consultas" component={Consultas}>
-                
-                </Route>
+            </Route>
+            <Route exact path="/admin" component={Sidebar}>
+            </Route>
+            <Route exact path="/admin/productos" component={Sidebar, ProductList}>
+            </Route>
+            <Route exact path="/consultas" component={Consultas}></Route>
+            <Route exact path="/admin" component={ProductList, Sidebar}></Route>
           </Switch>
-          <Footer/>
-        </main> 
+          <Footer />
+        </main>
       </Router>
     </div>
   );

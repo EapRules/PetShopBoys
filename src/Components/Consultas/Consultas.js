@@ -15,7 +15,7 @@ export default class Consultas extends Component {
             "pet_name": "",
             "especie": "",
             "race": "",
-            "sex": "e",
+            "sex": "",
             "message_html": ""
         }
     }
