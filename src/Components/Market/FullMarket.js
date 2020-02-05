@@ -1,13 +1,11 @@
 import React, { Component } from 'react'
-import Card from './Card'
+import MarketCard from './MarketCard'
 
 export class FullMarket extends Component {
     constructor(props) {
         super(props)
-
         this.state = {
             cart: [],
-
         }
     }
 
@@ -45,23 +43,23 @@ export class FullMarket extends Component {
 
                             {/* Fila 1 */}
                             <div className="card-deck">
-                                <Card fullMarket='true' addProduct={(name, price) => { this.addProduct(name, price) }} stock='12' imgUrl='https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' title='Pelotita' price='25' body='Jaja' />
-                                <Card fullMarket='true' addProduct={(name, price) => { this.addProduct(name, price) }} stock='12' imgUrl='https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' title='Mordedor' price='25' body='Jaja' />
-                                <Card fullMarket='true' addProduct={(name, price) => { this.addProduct(name, price) }} stock='12' imgUrl='https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' title='Plato de comida' price='25' body='Jaja' />
+                                <MarketCard fullMarket='true' addProduct={(name, price) => { this.addProduct(name, price) }} stock='12' imgUrl='https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' title='Pelotita' price='25' body='Jaja' />
+                                <MarketCard fullMarket='true' addProduct={(name, price) => { this.addProduct(name, price) }} stock='12' imgUrl='https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' title='Mordedor' price='25' body='Jaja' />
+                                <MarketCard fullMarket='true' addProduct={(name, price) => { this.addProduct(name, price) }} stock='12' imgUrl='https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' title='Plato de comida' price='25' body='Jaja' />
                             </div>
 
                             {/* Fila 2 */}
                             <div className="card-deck">
-                                <Card fullMarket='true' addProduct={(name, price) => { this.addProduct(name, price) }} stock='12' imgUrl='https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' title='Collar' price='25' body='Jaja' />
-                                <Card fullMarket='true' addProduct={(name, price) => { this.addProduct(name, price) }} stock='12' imgUrl='https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' title='Correa' price='25' body='Jaja' />
-                                <Card fullMarket='true' addProduct={(name, price) => { this.addProduct(name, price) }} stock='12' imgUrl='https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' title='Cadena' price='25' body='Jaja' />
+                                <MarketCard fullMarket='true' addProduct={(name, price) => { this.addProduct(name, price) }} stock='12' imgUrl='https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' title='Collar' price='25' body='Jaja' />
+                                <MarketCard fullMarket='true' addProduct={(name, price) => { this.addProduct(name, price) }} stock='12' imgUrl='https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' title='Correa' price='25' body='Jaja' />
+                                <MarketCard fullMarket='true' addProduct={(name, price) => { this.addProduct(name, price) }} stock='12' imgUrl='https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' title='Cadena' price='25' body='Jaja' />
                             </div>
 
                             {/* Fila 3 */}
                             <div className="card-deck">
-                                <Card fullMarket='true' addProduct={(name, price) => { this.addProduct(name, price) }} stock='12' imgUrl='https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' title='Cucha' price='25' body='Jaja' />
-                                <Card fullMarket='true' addProduct={(name, price) => { this.addProduct(name, price) }} stock='12' imgUrl='https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' title='Casa' price='25' body='Jaja' />
-                                <Card fullMarket='true' addProduct={(name, price) => { this.addProduct(name, price) }} stock='12' imgUrl='https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' title='Alimento' price='25' body='Jaja' />
+                                <MarketCard fullMarket='true' addProduct={(name, price) => { this.addProduct(name, price) }} stock='12' imgUrl='https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' title='Cucha' price='25' body='Jaja' />
+                                <MarketCard fullMarket='true' addProduct={(name, price) => { this.addProduct(name, price) }} stock='12' imgUrl='https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' title='Casa' price='25' body='Jaja' />
+                                <MarketCard fullMarket='true' addProduct={(name, price) => { this.addProduct(name, price) }} stock='12' imgUrl='https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' title='Alimento' price='25' body='Jaja' />
                             </div>
                         </section>
                     </div>
