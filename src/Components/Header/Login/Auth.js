@@ -16,9 +16,9 @@ export default class Auth extends Component {
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div className="modal-body row justify-content-around">
-                <Login />
-                <Register />
+              <div className="modal-body row justify-content-around" >
+                <div ><Login /></div>
+                <div><Register /></div>
               </div>
               <div className="modal-footer">
               </div>
