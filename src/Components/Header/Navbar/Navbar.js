@@ -10,19 +10,15 @@ export default class Navbar extends Component {
       isLoggedIn: false
     }
   }
-
   componentDidMount() {
     const token = localStorage.getItem('token')
     this.setState({ isLoggedIn: token ? true : false })
   }
-
   logOut = e => {
     e.preventDefault();
     localStorage.removeItem('token');
     window.location.reload()
   }
-
-
   render() {
     return (
       <div>

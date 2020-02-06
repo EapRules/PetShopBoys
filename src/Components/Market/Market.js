@@ -60,7 +60,7 @@ export default class Market extends Component {
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="col my-2"><MarketCard addProduct={(name, price) => { this.addProduct(name, price) }} price="42" imgUrl='https://www.dhresource.com/webp/m/0x0s/f2-albu-g5-M00-23-45-rBVaI1nd2ViAQ_jsAAJAfIAdDYM207.jpg/fashion-plastic-dog-toys-pet-treasure-hunting.jpg' title='Otro mordedor' body='Parece pista de hotwils jajajaj' />
+                                <div className="col my-2"><MarketCard addProduct={(name, price) => { this.addProduct(name, price) }} price="42" imgUrl='https://www.dhresource.com/webp/m/0x0s/f2-albu-g5-M00-23-45-rBVaI1nd2ViAQ_jsAAJAfIAdDYM207.jpg/fashion-plastic-dog-toys-pet-treasure-hunting.jpg' title=' Mordedor 2' body='Parece pista de hotwils jajajaj' />
                                 </div>
                                 <div className="col my-2">
                                     <MarketCard addProduct={(name, price) => { this.addProduct(name, price) }} price="65" imgUrl='https://cdn.shopify.com/s/files/1/0964/0162/products/Q966711-pet-toys-with-logo-1_large.jpg?v=1546894015' title='Huesito' body='Esta muy bonito' />
@@ -88,12 +88,7 @@ export default class Market extends Component {
                                 </div>
                             </div>
                             <hr className='mt-0' />
-                            <div className="row">
-                                <div className="col text-center">
-                                    <p style={{ fontSize: 14 }} className="lead my-0">Aceptamos todas las tarjetas de creditos</p>
-                                    <p className="lead">12 cuotas sin interes!</p>
-                                </div>
-                            </div>
+
                             {/* Starts */}
                             <div >
                                 <YouTube videoId='3a9ncMJLMXg' opts={opts} className='mt-3' />
