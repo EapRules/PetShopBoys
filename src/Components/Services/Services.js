@@ -19,7 +19,7 @@ class Services extends Component {
                     <div className="col-lg-4 col-sm-12 text-center p-3">
 
                         <div className="card text-center">
-                            <img src={imagen3} class="card-img-top" alt="..."></img>
+                            <img src={imagen3} className="card-img-top" alt="..."></img>
                             <div className="card-body">
                                 <h5 className="card-title">Consulta</h5>
                                 <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -30,7 +30,7 @@ class Services extends Component {
 
                     <div className="col-lg-4 col-sm-12 text-center p-3">
                         <div className="card text-center">
-                            <img src={imagen7} class="card-img-top" alt="..."></img>
+                            <img src={imagen7} className="card-img-top" alt="..."></img>
                             <div className="card-body">
                                 <h5 className="card-title">Estetica</h5>
                                 <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -40,45 +40,45 @@ class Services extends Component {
                     </div>
 
                     <div className="col-lg-4 col-sm-12 text-center p-3">
-                        <div class="card text-center">
-                            <img src={imagen6} class="card-img-top" alt="..."></img>
-                            <div class="card-body">
-                                <h5 class="card-title">Cirugia</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="http://localhost:3000" class="btn btn-primary">Saber +</a>
+                        <div className="card text-center">
+                            <img src={imagen6} className="card-img-top" alt="..."></img>
+                            <div className="card-body">
+                                <h5 className="card-title">Cirugia</h5>
+                                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="http://localhost:3000" className="btn btn-primary">Saber +</a>
                             </div>
                         </div>
                     </div>
 
                     <div className="col-lg-4 col-sm-12 text-center p-3">
-                        <div class="card text-center">
-                            <img src={imagen5} class="card-img-top" alt="..."></img>
-                            <div class="card-body">
-                                <h5 class="card-title">Internacion</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="http://localhost:3000" class="btn btn-primary">Saber +</a>
+                        <div className="card text-center">
+                            <img src={imagen5} className="card-img-top" alt="..."></img>
+                            <div className="card-body">
+                                <h5 className="card-title">Internacion</h5>
+                                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="http://localhost:3000" className="btn btn-primary">Saber +</a>
                             </div>
                         </div>
                     </div>
 
                     <div className="col-lg-4 col-sm-12 text-center p-3">
-                        <div class="card text-center">
-                            <img src={imagen1} class="card-img-top" alt="..."></img>
-                            <div class="card-body">
-                                <h5 class="card-title">Vacunacion</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="http://localhost:3000" class="btn btn-primary">Saber +</a>
+                        <div className="card text-center">
+                            <img src={imagen1} className="card-img-top" alt="..."></img>
+                            <div className="card-body">
+                                <h5 className="card-title">Vacunacion</h5>
+                                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="http://localhost:3000" className="btn btn-primary">Saber +</a>
                             </div>
                         </div>
                     </div>
 
                     <div className="col-lg-4 col-sm-12 text-center p-3">
-                        <div class="card text-center">
-                            <img src={imagen4} class="card-img-top" alt="..."></img>
-                            <div class="card-body">
-                                <h5 class="card-title">Radiografia</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="http://localhost:3000" class="btn btn-primary">Saber +</a>
+                        <div className="card text-center">
+                            <img src={imagen4} className="card-img-top" alt="..."></img>
+                            <div className="card-body">
+                                <h5 className="card-title">Radiografia</h5>
+                                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="http://localhost:3000" className="btn btn-primary">Saber +</a>
                             </div>
                         </div>
                     </div>

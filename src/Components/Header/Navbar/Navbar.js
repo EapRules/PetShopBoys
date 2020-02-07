@@ -10,19 +10,15 @@ export default class Navbar extends Component {
       isLoggedIn: false
     }
   }
-
   componentDidMount() {
     const token = localStorage.getItem('token')
     this.setState({ isLoggedIn: token ? true : false })
   }
-
   logOut = e => {
     e.preventDefault();
     localStorage.removeItem('token');
     window.location.reload()
   }
-
-
   render() {
     return (
       <div>
@@ -51,8 +47,8 @@ export default class Navbar extends Component {
               <li className="nav-item">
                 {
                   this.state.isLoggedIn
-                    ? <div class="btn-group dropleft">
-                      <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    ? <div className="btn-group dropleft">
+                      <button type="button" className="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i className="fas fa-user-circle"></i>  Perfil
                     </button>
                       <div className="dropdown-menu">

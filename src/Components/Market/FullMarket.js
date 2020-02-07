@@ -1,25 +1,47 @@
 import React, { Component } from 'react'
-import Card from './Card'
+import MarketCard from './MarketCard'
 
 export class FullMarket extends Component {
     constructor(props) {
         super(props)
-
         this.state = {
+            selfCart: [],
             cart: [],
-
+            market: []
         }
     }
 
     componentDidMount() {
         var token = localStorage.getItem('token')
         this.setState({ isLoggedIn: token ? true : false })
+
+        fetch('https://rolling-pet-shop.herokuapp.com/products')
+            .then(res => res.json())
+            .then(res => this.setState({ market: res.result }))
     }
 
-    addProduct = (name, price) => {
+    addProduct = (name, id, qtty, price) => {
+        // Se trae los datos del carrito...
         let array = this.state.cart
-        array.push({ name, price })
-        this.setState({ cart: array })
+        let sendArray = []
+
+
+        // Se verifica si existe algun producto que contenga
+        // La id del producto que se intenta agregar.
+        const found = array.findIndex((element) => {
+            return element.productId === id
+        })
+
+        // En caso de encontrar algún resultado mayor a 
+        // -1, agregar un numero al qtty y ponerlo en el array.
+
+        if (found >= 0) {
+            array[found].quantity++;
+            this.setState({ cart: array })
+        } else {
+            array.push({ name, productId: id, price, quantity: qtty })
+            this.setState({ cart: array })
+        }
     }
 
     deleteProduct = i => {
@@ -28,41 +50,60 @@ export class FullMarket extends Component {
         this.setState({ cart: a })
     }
 
+    handleBuy = i => {
+        let toBuy = this.state.cart
+        console.log("toBuy Content:", toBuy)
+        for (i = 0; i < toBuy.length; i++) {
+            delete toBuy[i].name
+            delete toBuy[i].price
+        }
+        fetch("http://192.168.1.114:4000/sales", {
+            method: "POST",
+            body: JSON.stringify({ products: toBuy }),
+            headers: { "Content-Type": "application/json", "authorization": `Bearer ${localStorage.getItem('JWT')}` }
+        })
+            .then(res => console.log(res))
+        // .then(data => console.log(data))
+        //     this.setState({ loading: false })
+        //     if (data.token) {
+        //         Swal.fire({
+        //             icon: 'success',
+        //             title: `${data.message}`,
+        //             showConfirmButton: false,
+        //             timer: 1500
+        //         })
+        //     }
+        //     else {
+        //         Swal.fire({
+        //             icon: 'error',
+        //             title: `${data.message}`,
+        //             showConfirmButton: false,
+        //             timer: 1500
+        //         })
+        //     }
+    }
+
+    // };
+
+    // }
+
 
     render() {
+
+        console.log(this.state.cart)
+
         return (
             <section className='p-3'>
-                {/* Header, titulo de Tienda. */}
 
                 <div className="row border-bottom mb-5"><div className="col"><h1 className="display-4 text-center">Tienda!</h1></div></div>
                 <div className="row">
 
-                    {/* Cuadro de 3 x 3 dónde se muestran los ítems disponibles para la compra
-                    Los items se consiguen desde la base de datos. */}
-
                     <div className="col col-8">
                         <section>
+                            {this.state.market.map(i => (
+                                <MarketCard fullMarket='true' addProduct={(name, id, qtty, price) => { this.addProduct(i.name, i._id, 1, i.price) }} stock={i.stock} imgUrl='https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' title={i.name} price={i.price} body={i.description} />
 
-                            {/* Fila 1 */}
-                            <div className="card-deck">
-                                <Card fullMarket='true' addProduct={(name, price) => { this.addProduct(name, price) }} stock='12' imgUrl='https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' title='Pelotita' price='25' body='Jaja' />
-                                <Card fullMarket='true' addProduct={(name, price) => { this.addProduct(name, price) }} stock='12' imgUrl='https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' title='Mordedor' price='25' body='Jaja' />
-                                <Card fullMarket='true' addProduct={(name, price) => { this.addProduct(name, price) }} stock='12' imgUrl='https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' title='Plato de comida' price='25' body='Jaja' />
-                            </div>
-
-                            {/* Fila 2 */}
-                            <div className="card-deck">
-                                <Card fullMarket='true' addProduct={(name, price) => { this.addProduct(name, price) }} stock='12' imgUrl='https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' title='Collar' price='25' body='Jaja' />
-                                <Card fullMarket='true' addProduct={(name, price) => { this.addProduct(name, price) }} stock='12' imgUrl='https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' title='Correa' price='25' body='Jaja' />
-                                <Card fullMarket='true' addProduct={(name, price) => { this.addProduct(name, price) }} stock='12' imgUrl='https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' title='Cadena' price='25' body='Jaja' />
-                            </div>
-
-                            {/* Fila 3 */}
-                            <div className="card-deck">
-                                <Card fullMarket='true' addProduct={(name, price) => { this.addProduct(name, price) }} stock='12' imgUrl='https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' title='Cucha' price='25' body='Jaja' />
-                                <Card fullMarket='true' addProduct={(name, price) => { this.addProduct(name, price) }} stock='12' imgUrl='https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' title='Casa' price='25' body='Jaja' />
-                                <Card fullMarket='true' addProduct={(name, price) => { this.addProduct(name, price) }} stock='12' imgUrl='https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' title='Alimento' price='25' body='Jaja' />
-                            </div>
+                            ))}
                         </section>
                     </div>
 
@@ -83,7 +124,7 @@ export class FullMarket extends Component {
                                                         <i onClick={() => this.deleteProduct(i)} style={{ cursor: "pointer" }} className="far fa-trash-alt text-danger"></i>
                                                     </div>
                                                     <div className="col col-7">
-                                                        {boi.name}
+                                                        {boi.qtty} - {boi.name}
                                                     </div>
                                                     <div className="col col-3">
                                                         ${boi.price}

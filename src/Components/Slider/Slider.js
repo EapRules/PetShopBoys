@@ -19,7 +19,7 @@ class Slider extends Component {
                     <div className="carousel-item active">
                         <img src={image1} className="d-block w-100" alt="..." />
                         <div className="carousel-caption d-none d-md-block">
-                            <a href="http://localhost:3000">
+                            <a href="https://localhost:3000">
                                 <h3>Petshop</h3>
                                 <p>Ponemos a tu alcance todo lo que tu fiel amigo necesita</p>
                             </a>
@@ -28,7 +28,7 @@ class Slider extends Component {
                     <div className="carousel-item">
                         <img src={image2} className="d-block w-100" alt="..." />
                         <div className="carousel-caption d-none d-md-block">
-                            <a href="http://localhost:3000">
+                            <a href="https://localhost:3000">
                                 <h3>Consultas</h3>
                                 <p>Realice sus consultas online</p>
                             </a>
@@ -37,7 +37,7 @@ class Slider extends Component {
                     <div className="carousel-item">
                         <img src={image3} className="d-block w-100" alt="..." />
                         <div className="carousel-caption d-none d-md-block">
-                            <a href="http://localhost:3000">
+                            <a href="https://localhost:3000">
                                 <h3>Internacion/Cirugia</h3>
                             </a>
                         </div>
@@ -45,7 +45,7 @@ class Slider extends Component {
                     <div className="carousel-item">
                         <img src={image4} className="d-block w-100" alt="..." />
                         <div className="carousel-caption d-none d-md-block">
-                            <a href="http://localhost:3000">
+                            <a href="https://localhost:3000">
                                 <h3>Emergencias</h3>
                                 <p>Llamá: 0800-234-2345</p>
                             </a>
