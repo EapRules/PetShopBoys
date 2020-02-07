@@ -3,13 +3,8 @@ import React from 'react';
 // Importing web layout
 
 import Navbar from '../Components/Header/Navbar/Navbar';
-import Slider from '../Components/Landing/Slider/Slider';
-import Services from '../Components/Landing/Services/Services';
-import Market from '../Components/Landing/Market/Market';
 import Footer from '../Components/Footer/Footer';
 import Admin from '../Components/Admin-Page/Admin';
-import ProductList from '../Components/Admin-Page/Product-list/Product-list';
-import Sidebar from '../Components/Admin-Page/Sidebar/Sidebar';
 import Consultas from '../Components/Consultas/Consultas';
 
 // Importing React Router
@@ -29,7 +24,7 @@ export default function App() {
         <Navbar />
         <Route exact path='/' render={() => (<Home />)} />
         {/* <Route exact path='/login' component={Home} /> */}
-        <Route exact path="/admin" component={Sidebar}/>
+        <Route exact path="/admin" component={Admin}/>
         <Route exact path="/consultas" component={Consultas} />
         <Route exact path='/tienda' render={() => (<FullMarket />)} />
         <Footer />
@@ -45,12 +40,8 @@ export default function App() {
               </Route>
               <Route exact path="/admin" component={Sidebar}>
               </Route>
-              <Route exact path="/admin/productos" component={Sidebar,ProductList}>
-                
-              </Route>
-              <Route exact path="/consultas" component={Consultas}>
-                
-                </Route>
+              <Route exact path="/admin/productos" component={Sidebar,ProductList}/>
+          
           </Switch>
           <Footer/>
         </main> 
