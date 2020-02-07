@@ -1,6 +1,6 @@
 import React from 'react';
 
-// Importing web layout
+// Importing web layout  
 
 import Navbar from '../Components/Header/Navbar/Navbar';
 import Footer from '../Components/Footer/Footer';
@@ -15,6 +15,7 @@ import Home from './Home'
 import FullMarket from '../Components/Market/FullMarket'
 
 
+
 function App() {
   return (
     <div className="App">
@@ -22,7 +23,7 @@ function App() {
         <Navbar />
         <Route exact path='/' render={() => (<Home />)} />
         {/* <Route exact path='/login' component={Home} /> */}
-        <Route exact path='/tienda' render={() => (<FullMarket />)} />
+        <Route exact path='/tienda' render={() => (<FullMarket />)} />  
         <Footer />
       </Router>
     </div>
