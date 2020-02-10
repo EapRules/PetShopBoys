@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
-import Market from '../Components/Market/FullMarket';
-import Services from '../Components/Landing/Services/Services';
 import Slider from '../Components/Landing/Slider/Slider';
+import Services from '../Components/Landing/Services/Services';
+import FullMarket from '../Components/Market/FullMarket';
 
-import ProductList from '../Components/Admin-Page/Product-list/Product-list';
 
 
 export default class Home extends Component {
@@ -12,8 +11,10 @@ export default class Home extends Component {
             <section>
                 <Slider />
                 <Services />
-                <Market></Market>
+                <FullMarket />
             </section>
         )
     }
 }
+{/* <Route exact path="/admin" component={Sidebar}/> */}
+{/* <Route exact path="/admin/productos" component={Sidebar,ProductList}></Route> */}
