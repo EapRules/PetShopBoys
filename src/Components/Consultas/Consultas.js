@@ -18,7 +18,7 @@ export default class Consultas extends Component {
             "pet_name": "",
             "especie": "",
             "race": "",
-            "sex": "e",
+            "sex": "",
             "message_html": ""
         }
     }
@@ -75,8 +75,6 @@ export default class Consultas extends Component {
                     // timer: 1500,
                     confirmButtonText:
                         '<a href="http://localhost:3000/" className="text-light btn-inicio">Volver al inicio</a>'
-                        
-              
                 })
                 // document.getElementById('consulta-form').getElementsByClassName("form-control").reset();
             }
