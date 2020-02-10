@@ -44,6 +44,9 @@ export default class Navbar extends Component {
                 <Link exact to="/consultas" className="nav-link" href="#">Consulta</Link>
               </li>
               <li className="nav-item">
+                <Link exact to="/admin" className="nav-link" href="#">Admin</Link>
+              </li>
+              <li className="nav-item">
                 {
                   this.state.isLoggedIn
                     ? <div className="btn-group dropleft">

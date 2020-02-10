@@ -12,6 +12,7 @@ import Consultas from '../Components/Consultas/Consultas';
 
 // Importing React Router
 import { BrowserRouter as Router, Route, withRouter } from "react-router-dom";
+
 // Importing Pages
 import Home from './Home'
 import FullMarket from '../Components/Market/FullMarket'
