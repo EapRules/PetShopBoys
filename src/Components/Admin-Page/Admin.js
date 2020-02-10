@@ -5,6 +5,8 @@ import Sidebar from './Sidebar/Sidebar'
 
 // Importing React Router
 import { BrowserRouter as Router, Route, withRouter, Switch } from "react-router-dom";
+import Navbar from '../Header/Navbar/Navbar';
+import Footer from '../Footer/Footer';
 
 
 export default class Admin extends Component {
@@ -12,6 +14,9 @@ export default class Admin extends Component {
         return (
             <div className="container">
                 <Router>
+                    <Route>
+                        <Navbar/>
+                    </Route>
                     <Route>
                         <Sidebar  />
                     </Route>
@@ -23,6 +28,9 @@ export default class Admin extends Component {
                             <Userlist/>
                         </Route>
                     </Switch>
+                    <Route>
+                        <Footer/>
+                    </Route>
                 </Router>
                     
                 

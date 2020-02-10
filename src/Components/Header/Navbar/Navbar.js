@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Login from '../Login/Auth';
 import Logo192 from '../../../images/logo192.png'
-import { Link } from 'react-router-dom';
+import Profile from '../../Auth/Profile'
+import Admin from '../../Admin-Page/Admin'
 export default class Navbar extends Component {
 
   constructor(props) {
@@ -44,7 +45,7 @@ export default class Navbar extends Component {
                 <Link exact to="/consultas" className="nav-link" href="#">Consulta</Link>
               </li>
               <li className="nav-item">
-                <Link exact to="/admin" className="nav-link" href="#">Admin</Link>
+                <Link exact to="/admin" component={Admin} className="nav-link" href="#">Admin</Link>
               </li>
               <li className="nav-item">
                 {

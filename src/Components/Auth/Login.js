@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import jwt from 'jsonwebtoken'
+
 import closeAllModals from '../shared/CloseModals'
 import Swal from 'sweetalert2'
 import { BeatLoader } from "react-spinners";

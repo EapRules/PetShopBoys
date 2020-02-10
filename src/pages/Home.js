@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Slider from '../Components/Slider/Slider';
-import Services from '../Components/Services/Services';
-import Market from '../Components/Market/Market';
+import Slider from '../Components/Landing/Slider/Slider';
+import Services from '../Components/Landing/Services/Services';
+import FullMarket from '../Components/Market/FullMarket';
 
 
 
@@ -11,7 +11,7 @@ export default class Home extends Component {
             <section>
                 <Slider />
                 <Services />
-                <Market />
+                <FullMarket />
             </section>
         )
     }
