@@ -57,10 +57,10 @@ export class FullMarket extends Component {
             delete toBuy[i].name
             delete toBuy[i].price
         }
-        fetch("http://192.168.1.114:4000/sales", {
+        fetch("https://rolling-pet-shop.herokuapp.com/sales", {
             method: "POST",
             body: JSON.stringify({ products: toBuy }),
-            headers: { "Content-Type": "application/json", "authorization": `Bearer ${localStorage.getItem('JWT')}` }
+            headers: { "Content-Type": "application/json", "authorization": `Bearer ${localStorage.getItem('token')}` }
         })
             .then(res => console.log(res))
         // .then(data => console.log(data))

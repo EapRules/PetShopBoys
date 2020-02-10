@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import Swal from 'sweetalert2'
+import { BeatLoader } from "react-spinners";
+import Loader from '../shared/Loader';
 
 export default class Turnos extends Component {
     constructor(props) {
@@ -8,14 +10,19 @@ export default class Turnos extends Component {
             ownerName: '',
             petName: '',
             date: '',
+            loading: false
         }
+    }
+    componentDidMount() {
+        let token = localStorage.getItem("token");
+        this.setState({ isLoggedIn: token ? true : false })
     }
     handleChange = obj => {
         let { name, value } = obj.target
         this.setState({ [name]: value })
     }
     onSubmit = async obj => {
-        console.log("btn funciona")
+        this.setState({ loading: true })
         if (obj) {
             obj.preventDefault();
         }
@@ -31,6 +38,7 @@ export default class Turnos extends Component {
             }
         );
         const res = await response.json();
+        this.setState({ loading: false })
         if (!res.errors) {
             Swal.fire({
                 icon: 'success',
@@ -53,6 +61,12 @@ export default class Turnos extends Component {
     render() {
         return (
             <div>
+                <BeatLoader
+                    css={Loader}
+                    size={30}
+                    color={"green"}
+                    loading={this.state.loading}
+                />
                 <h1 className="text-center m-5">Turnos</h1>
                 <div className="row m-5">
                     <div className="col-5">
@@ -110,12 +124,14 @@ export default class Turnos extends Component {
                                 <div className="form-group col-6">
                                     <label htmlFor="inputState">Forma de pago</label>
                                     <select name="inputState" className="form-control ">
-                                        <option selected>Efectivo</option>
+                                        <option defaultValue>Efectivo</option>
                                         <option>...</option>
                                     </select>
                                 </div>
                             </div>
-                            <button type="submit" className="btn btn-success w-100 mt-4">Solicitar Turno</button>
+
+
+                            <button type={this.state.isLoggedIn ? "submit" : "button"} className={this.state.isLoggedIn ? 'btn w-100 btn-success' : 'btn w-100 btn-danger'}>{this.state.isLoggedIn ? 'Solicitar Turno' : 'Debe iniciar sesion para Solicitar un Turno'}</button>
                         </form>
                     </div>
                 </div>
