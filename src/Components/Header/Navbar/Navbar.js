@@ -45,7 +45,7 @@ export default class Navbar extends Component {
                 <Link exact to="/consultas" className="nav-link" href="#">Consulta</Link>
               </li>
               <li className="nav-item">
-                <Link exact to="/admin" component={Admin} className="nav-link" href="#">Admin</Link>
+                {/* <Link exact to="/a className="nav-link" href="#">Admin</Link> */}
               </li>
               <li className="nav-item">
                 {

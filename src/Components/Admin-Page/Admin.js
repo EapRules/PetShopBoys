@@ -14,12 +14,12 @@ export default class Admin extends Component {
         return (
             <div className="container">
                 <Router>
-                    <Route>
+                    {/* <Route>
                         <Navbar/>
-                    </Route>
-                    <Route>
+                    </Route> */}
+                    {/* <Route>
                         <Sidebar  />
-                    </Route>
+                    </Route> */}
                     <Switch>
                         <Route>
                             <ProductList/>
@@ -28,9 +28,9 @@ export default class Admin extends Component {
                             <Userlist/>
                         </Route>
                     </Switch>
-                    <Route>
+                    {/* <Route>
                         <Footer/>
-                    </Route>
+                    </Route> */}
                 </Router>
                     
                 
