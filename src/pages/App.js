@@ -30,6 +30,7 @@ export default function App() {
         <Route exact path='/' render={() => (<Home />)} />
         {/* <Route exact path='/login' component={Home} /> */}
         <Route exact path='/tienda' render={() => (<FullMarket />)} />
+        <Route exact path="/consultas" component={Consultas}/>
         <Footer />
      
      {/* <Router>

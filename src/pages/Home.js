@@ -17,3 +17,5 @@ export default class Home extends Component {
         )
     }
 }
+{/* <Route exact path="/admin" component={Sidebar}/> */}
+{/* <Route exact path="/admin/productos" component={Sidebar,ProductList}></Route> */}
