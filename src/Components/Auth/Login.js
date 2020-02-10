@@ -1,9 +1,14 @@
 import React, { Component } from 'react'
+<<<<<<< HEAD
+// import $ from 'jquery'
+
+=======
 
 import closeAllModals from '../shared/CloseModals'
 import Swal from 'sweetalert2'
 import { BeatLoader } from "react-spinners";
 import Loader from '../shared/Loader';
+>>>>>>> 5e1bd40eefc9cc932d0bfcf3095121f7904b1665
 
 export default class Login extends Component {
   constructor(props) {

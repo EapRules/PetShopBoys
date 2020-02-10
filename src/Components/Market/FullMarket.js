@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import MarketCard from './MarketCard'
+import Card from '../Landing/Market/Card';
 
 export class FullMarket extends Component {
     constructor(props) {

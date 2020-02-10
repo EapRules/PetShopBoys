@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import * as emailjs from 'emailjs-com';
 import '../Consultas/Consultas.scss';
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+import 'sweetalert2/src/sweetalert2.scss'
+import { Link } from 'react-router-dom';
 
 export default class Consultas extends Component {
     constructor(props) {
@@ -15,7 +18,7 @@ export default class Consultas extends Component {
             "pet_name": "",
             "especie": "",
             "race": "",
-            "sex": "e",
+            "sex": "",
             "message_html": ""
         }
     }
@@ -50,12 +53,40 @@ export default class Consultas extends Component {
             "message_html": this.state.message_html
         }
 
+        const limpiarFormulario = function () {
+            document.getElementById('consulta-form').getElementsByClassName("form-control").reset();
+        }
+
 
         const service_id = "gmail";
         const template_id = "vet_shop";
         let user_id = "user_Nmod0HqZC8hWaM1GNTMOl";
-        
-        emailjs.send(service_id, template_id, templateParams, user_id)
+
+        emailjs.send(service_id, template_id, templateParams, user_id).then(function (response) {
+            if (response.ok) {
+                console.log('Todo bien!');
+
+            } else {
+                Swal.fire({
+                    icon: 'success',
+                    title: `¡La consulta fue enviada exitosamente!`,
+                    showConfirmButton: true,
+                    focusConfirm: false,
+                    // timer: 1500,
+                    confirmButtonText:
+                        '<a href="http://localhost:3000/" className="text-light btn-inicio">Volver al inicio</a>'
+                })
+                // document.getElementById('consulta-form').getElementsByClassName("form-control").reset();
+            }
+        })
+            .catch(function (error) {
+                Swal.fire({
+                    icon: 'error',
+                    title: `No se pudo enviar el correo :(`,
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            });
     }
 
 
@@ -81,7 +112,7 @@ export default class Consultas extends Component {
                  </p>
                 </div>
 
-                <form className="py-5" name={this.props.name} method={this.props.method} action={this.props.action} >
+                <form id="consulta-form" className="py-5" name={this.props.name} method={this.props.method} action={this.props.action} >
 
                     <h2 className="text-center font-weight-bold">Sus datos personales</h2>
                     <div class="row py-1 justify-content-around md-form">

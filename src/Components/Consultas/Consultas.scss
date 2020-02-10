@@ -48,3 +48,11 @@ label:focus,
     -webkit-appearance:none;
     box-shadow: none !important;
 }
+.btn-inicio{
+    color: #fff;
+    text-decoration: none;
+    &:hover{
+        color: #ffffff;
+        text-decoration: none;
+    }
+}
