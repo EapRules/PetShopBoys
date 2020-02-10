@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 
 import Login from '../../Auth/Login'
 import Register from '../../Auth/Register'
@@ -9,19 +8,19 @@ export default class Auth extends Component {
     return (
       <div>
 
-        <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-          <div class="modal-dialog modal-xl" role="document">
-            <div class="modal-content modal-xl">
-              <div class="modal-footer">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <div className="modal fade" id="staticBackdrop" data-backdrop="static" data-target="#myModal" tabIndex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div className="modal-dialog modal-xl" role="document">
+            <div className="modal-content modal-xl">
+              <div className="modal-footer">
+                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div class="modal-body row justify-content-around">
-                <Login />
-                <Register />
+              <div className="modal-body row justify-content-around" >
+                <div ><Login /></div>
+                <div><Register /></div>
               </div>
-              <div class="modal-footer">
+              <div className="modal-footer">
               </div>
             </div>
           </div>

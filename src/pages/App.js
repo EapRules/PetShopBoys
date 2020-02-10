@@ -1,20 +1,26 @@
 import React from 'react';
+// Importing web layout
 import Navbar from '../Components/Header/Navbar/Navbar';
-import Slider from '../Components/Slider/Slider';
-import Services from '../Components/Services/Services';
-import Market from '../Components/Market/Market';
 import Footer from '../Components/Footer/Footer';
-import ProductList from '../Components/Admin-Page/Product-list/Product-list';
-
+// Importing React Router
+import { BrowserRouter as Router, Route, withRouter } from "react-router-dom";
+// Importing Pages
+import Home from './Home'
+import FullMarket from '../Components/Market/FullMarket'
+import Turnos from '../Components/Turnos/Turnos';
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <Slider />
-      <Services />
-      <Market />
-      <Footer />
+      <Router>
+        <Navbar />
+        <Route exact path='/' render={() => (<Home />)} />
+        {/* <Route exact path='/login' component={Home} /> */}
+        <Route exact path='/tienda' render={() => (<FullMarket />)} />
+        <Route exact path='/turnos' render={() => (<Turnos />)} />
+        <Footer />
+
+      </Router>
     </div>
   );
 }
