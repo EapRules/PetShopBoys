@@ -1,7 +1,5 @@
 import React from 'react';
-
 // Importing web layout
-
 import Navbar from '../Components/Header/Navbar/Navbar';
 import Slider from '../Components/Landing/Slider/Slider';
 import Services from '../Components/Landing/Services/Services';
@@ -13,14 +11,11 @@ import Sidebar from '../Components/Admin-Page/Sidebar/Sidebar';
 import Consultas from '../Components/Consultas/Consultas';
 
 // Importing React Router
-
 import { BrowserRouter as Router, Route, withRouter } from "react-router-dom";
-
 // Importing Pages
-
 import Home from './Home'
 import FullMarket from '../Components/Market/FullMarket'
-
+import Turnos from '../Components/Turnos/Turnos';
 
 export default function App() {
   return (
@@ -30,31 +25,12 @@ export default function App() {
         <Route exact path='/' render={() => (<Home />)} />
         {/* <Route exact path='/login' component={Home} /> */}
         <Route exact path='/tienda' render={() => (<FullMarket />)} />
-        <Route exact path="/consultas" component={Consultas}/>
+        <Route exact path='/turnos' render={() => (<Turnos />)} />
+        <Route exact path='/consultas' render={() => (<Consultas />)}/>
+        {/* <Route exact path='/admin' render={() => (<Admin/>)}/> */}
         <Footer />
-     
-     {/* <Router>
-        <main>
-          <Navbar />
-            <Switch>
-            <Route exact path="/">
-              <Slider/>
-              <Services />
-              <Market />
-              </Route>
-              <Route exact path="/admin" component={Sidebar}>
-              </Route>
-              <Route exact path="/admin/productos" component={Sidebar,ProductList}>
-                
-              </Route>
-              <Route exact path="/consultas" component={Consultas}>
-                
-                </Route>
-          </Switch>
-          <Footer/>
-        </main> 
-      </Router> */}
-      </Router >
+
+      </Router>
     </div>
   );
 }
