@@ -60,6 +60,7 @@ class Slider extends Component {
                     <span className="carousel-control-next-icon" aria-hidden="true"></span>
                     <span className="sr-only">Next</span>
                 </a>
+                <hr/>
             </div>
         );
     }
