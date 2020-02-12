@@ -10,30 +10,29 @@ import Footer from '../Footer/Footer';
 
 
 export default class Admin extends Component {
+
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            currentPage: "userList"
+        }
+    }
+
+    changePage = (obj) => {
+        this.setState(
+            { currentPage: obj }
+        )
+    }
+
     render() {
         return (
             <div className="container">
-                <Router>
-                    {/* <Route>
-                        <Navbar/>
-                    </Route> */}
-                    {/* <Route>
-                        <Sidebar  />
-                    </Route> */}
-                    <Switch>
-                        <Route>
-                            <ProductList/>
-                        </Route>
-                        <Route>
-                            <Userlist/>
-                        </Route>
-                    </Switch>
-                    {/* <Route>
-                        <Footer/>
-                    </Route> */}
-                </Router>
-                    
-                
+                <Sidebar changePage={(obj) => this.changePage(obj)} />
+                {/* {this.state.isUserList ? <Userlist /> : <ProductList />} */}
+                {this.state.currentPage === 'userList' ? <Userlist /> : null}
+                {this.state.currentPage === 'productList' ? <ProductList /> : null}
+
             </div>
         )
     }
