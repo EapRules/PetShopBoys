@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route, withRouter } from "react-router-dom";
 import Home from './Home'
 import FullMarket from '../Components/Market/FullMarket'
 import Turnos from '../Components/Turnos/Turnos';
+import TurnosAdmin from '../Components/Admin-Page/Turnos-admin/Turnos-admin';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route exact path='/tienda' render={() => (<FullMarket />)} />
         <Route exact path='/turnos' render={() => (<Turnos />)} />
         <Footer />
+        <TurnosAdmin />
 
       </Router>
     </div>

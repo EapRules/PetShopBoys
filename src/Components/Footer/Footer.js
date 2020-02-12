@@ -35,20 +35,13 @@ export default class Footer extends Component {
                   </li>
                   <li>
                     <p>
-<<<<<<< HEAD
                       <a className="" href="#!">Turno </a>
-=======
                       <a className="" href="#!">Sobre Nosotros</a>
->>>>>>> 7faa441c178772a3bcfdf7a2494cbf546f38b475
                     </p>
                   </li>
                   <li>
                     <p>
-<<<<<<< HEAD
-                      <a className="" href="#!">Consulta</a>
-=======
                       <a className="" href="#!">Consultas</a>
->>>>>>> 7faa441c178772a3bcfdf7a2494cbf546f38b475
                     </p>
                   </li>
                 </ul>
@@ -72,11 +65,7 @@ export default class Footer extends Component {
                   </li>
                   <li>
                     <p>
-<<<<<<< HEAD
-                      <i className="fas fa-envelope mr-3"></i> info@Petshops.com</p>
-=======
                       <i className="fas fa-envelope mr-3"></i> info@petshopboys.com</p>
->>>>>>> 7faa441c178772a3bcfdf7a2494cbf546f38b475
                   </li>
                   <li>
                     <p>
