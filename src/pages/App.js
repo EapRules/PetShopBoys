@@ -7,8 +7,8 @@ import Footer from '../Components/Footer/Footer';
 import ProductList from '../Components/Admin-Page/Product-list/Product-list';
 import { BrowserRouter as Router, Route, Switch, withRouter } from "react-router-dom";
 import Sidebar from '../Components/Admin-Page/Sidebar/Sidebar';
-import Success from '../Components/Screens/Success/Success';
-import Fail from '../Components/Screens/Fail/Fail';
+import Success from '../Components/Market/Success/Success';
+import Fail from '../Components/Market/Fail/Fail';
 
 
 function App() {
