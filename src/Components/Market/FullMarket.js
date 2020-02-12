@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom'
 import MarketCard from '../Market/MarketCard';
 
 export class FullMarket extends Component {
@@ -62,31 +63,9 @@ export class FullMarket extends Component {
             body: JSON.stringify({ products: toBuy }),
             headers: { "Content-Type": "application/json", "authorization": `Bearer ${localStorage.getItem('token')}` }
         })
-            .then(res => console.log(res))
-        // .then(data => console.log(data))
-        //     this.setState({ loading: false })
-        //     if (data.token) {
-        //         Swal.fire({
-        //             icon: 'success',
-        //             title: `${data.message}`,
-        //             showConfirmButton: false,
-        //             timer: 1500
-        //         })
-        //     }
-        //     else {
-        //         Swal.fire({
-        //             icon: 'error',
-        //             title: `${data.message}`,
-        //             showConfirmButton: false,
-        //             timer: 1500
-        //         })
-        //     }
+            .then(res => res.json())
+            .then(res => window.location.href = res.url)
     }
-
-    // };
-
-    // }
-
 
     render() {
 
@@ -99,12 +78,12 @@ export class FullMarket extends Component {
                 <div className="row">
 
                     <div className="col col-8">
-                        <section>
+                        <div className='card-deck'>
                             {this.state.market.map(i => (
                                 <MarketCard fullMarket='true' addProduct={(name, id, qtty, price) => { this.addProduct(i.name, i._id, 1, i.price) }} stock={i.stock} imgUrl='https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' title={i.name} price={i.price} body={i.description} />
 
                             ))}
-                        </section>
+                        </div>
                     </div>
 
                     <div className="col col-4">
@@ -124,7 +103,7 @@ export class FullMarket extends Component {
                                                         <i onClick={() => this.deleteProduct(i)} style={{ cursor: "pointer" }} className="far fa-trash-alt text-danger"></i>
                                                     </div>
                                                     <div className="col col-7">
-                                                        {boi.qtty} - {boi.name}
+                                                        {boi.quantity} - {boi.name}
                                                     </div>
                                                     <div className="col col-3">
                                                         ${boi.price}
@@ -148,4 +127,4 @@ export class FullMarket extends Component {
     }
 }
 
-export default FullMarket
+export default withRouter(FullMarket)
