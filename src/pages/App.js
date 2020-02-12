@@ -26,7 +26,7 @@ export default function App() {
         <Route exact path='/' render={() => (<Home />)} />
         {/* <Route exact path='/login' component={Home} /> */}
         <Route exact path="/admin" component={Sidebar}/>
-        <Route exact path="/consultas" component={Consultas} />
+        {/* <Route exact path="/consultas" component={Consultas} /> */}
         <Route exact path='/tienda' render={() => (<FullMarket />)} />
         <Route exact path='/turnos' render={() => (<Turnos />)} />
         <Route exact path='/consultas' render={() => (<Consultas />)}/>
