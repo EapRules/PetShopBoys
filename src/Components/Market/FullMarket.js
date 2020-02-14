@@ -73,27 +73,28 @@ export class FullMarket extends Component {
 
         return (
             <section className='p-3'>
+                
+                <div className="row  mb-5"><div className="col"><h1 className="text-center main-title">Tienda</h1></div></div>
+                <div className="row ml-5">
 
-                <div className="row border-bottom mb-5"><div className="col"><h1 className="display-4 text-center">Tienda!</h1></div></div>
-                <div className="row">
-
-                    <div className="col col-8">
-                        <div className='card-deck'>
+                    <div className="col-8 row d-flex">
+                        
                             {this.state.market.map(i => (
+                                <div className='row col-4'>
                                 <MarketCard fullMarket='true' addProduct={(name, id, qtty, price) => { this.addProduct(i.name, i._id, 1, i.price) }} stock={i.stock} imgUrl='https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' title={i.name} price={i.price} body={i.description} />
+                                </div>
 
                             ))}
-                        </div>
                     </div>
 
-                    <div className="col col-4">
-                        <section className='border p-3'>
+                    <div className="col-4">
+                        <section className='border p-3 shadow'>
                             <div className='row'>
                                 <div className="col">
                                     <h1 className="lead">Carrito de compras:</h1>
                                 </div>
                             </div>
-                            <div className="row">
+                            <div className="col">
                                 <div className="col">
                                     <ul className="list-group list-group-flush">
                                         {this.state.cart.map((boi, i) => (

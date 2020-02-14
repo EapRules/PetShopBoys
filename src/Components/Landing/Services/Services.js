@@ -13,12 +13,11 @@ class Services extends Component {
 
             <div className="box-2 my-5 mx-5">
 
-                <h1 id="services" className="font-weight-bold my-3">Our services</h1>
+                <h1 id="services" className="font-weight-bold my-3 text-center">Nuestros Servicios</h1>
                 <div className="row">
 
                     <div className="col-lg-4 col-sm-12 text-center p-3">
-
-                        <div className="card text-center">
+                        <div className="card text-center shadow rounded">
                             <img src={imagen3} className="card-img-top" alt="..."></img>
                             <div className="card-body">
                                 <h5 className="card-title">Consulta</h5>
@@ -29,7 +28,7 @@ class Services extends Component {
                     </div>
 
                     <div className="col-lg-4 col-sm-12 text-center p-3">
-                        <div className="card text-center">
+                        <div className="card text-center shadow rounded">
                             <img src={imagen7} className="card-img-top" alt="..."></img>
                             <div className="card-body">
                                 <h5 className="card-title">Estetica</h5>
@@ -40,7 +39,7 @@ class Services extends Component {
                     </div>
 
                     <div className="col-lg-4 col-sm-12 text-center p-3">
-                        <div className="card text-center">
+                        <div className="card text-center shadow rounded">
                             <img src={imagen6} className="card-img-top" alt="..."></img>
                             <div className="card-body">
                                 <h5 className="card-title">Cirugia</h5>
@@ -50,8 +49,8 @@ class Services extends Component {
                         </div>
                     </div>
 
-                    <div className="col-lg-4 col-sm-12 text-center p-3">
-                        <div className="card text-center">
+                    <div className="col-lg-4 col-sm-12 text-center  p-3">
+                        <div className="card text-center shadow rounded">
                             <img src={imagen5} className="card-img-top" alt="..."></img>
                             <div className="card-body">
                                 <h5 className="card-title">Internacion</h5>
@@ -62,7 +61,7 @@ class Services extends Component {
                     </div>
 
                     <div className="col-lg-4 col-sm-12 text-center p-3">
-                        <div className="card text-center">
+                        <div className="card text-center shadow rounded">
                             <img src={imagen1} className="card-img-top" alt="..."></img>
                             <div className="card-body">
                                 <h5 className="card-title">Vacunacion</h5>
@@ -72,8 +71,8 @@ class Services extends Component {
                         </div>
                     </div>
 
-                    <div className="col-lg-4 col-sm-12 text-center p-3">
-                        <div className="card text-center">
+                    <div className="col-lg-4 col-sm-12 text-center  p-3">
+                        <div className="card text-center shadow rounded">
                             <img src={imagen4} className="card-img-top" alt="..."></img>
                             <div className="card-body">
                                 <h5 className="card-title">Radiografia</h5>
@@ -83,7 +82,7 @@ class Services extends Component {
                         </div>
                     </div>
                 </div>
-
+                <hr/>
             </div>
         );
     }

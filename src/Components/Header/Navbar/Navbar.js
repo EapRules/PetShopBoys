@@ -29,7 +29,7 @@ export default class Navbar extends Component {
         </div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <Link exact to="/" className="navbar-brand" href="#">
-            <img src={Logo192} width="30" height="30" className="d-inline-block align-top" alt="" /><strong>  PetShopBoys</strong></Link>
+            <img src={Logo192} width="30" height="30" className="d-inline-block align-top rounded shadow" alt="" /><strong className="shadow">  PetShopBoys</strong></Link>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -61,7 +61,7 @@ export default class Navbar extends Component {
                         <button className='dropdown-item' onClick={this.logOut}>Cerrar Sesion</button>
                       </div>
                     </div>
-                    : <button type="button" className="btn btn-success btn-sm" data-toggle="modal" data-target="#staticBackdrop">
+                    : <button type="button" className="btn btn-success btn-sm mt-1" data-toggle="modal" data-target="#staticBackdrop">
                       <i className="fas fa-user-circle"></i> Ingresar
                 </button>}
               </li>
