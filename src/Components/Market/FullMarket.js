@@ -120,7 +120,8 @@ export class FullMarket extends Component {
                             </div>
                             <div className={this.state.buy ? 'd-block' : 'd-none'}>
 
-                            </div>                        </section>
+                            </div>
+                        </section>
                     </div>
                 </div>
             </section>
