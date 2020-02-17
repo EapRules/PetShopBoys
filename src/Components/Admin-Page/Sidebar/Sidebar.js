@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 class Sidebar extends Component {
     render() {
         return (
-            <div className="container-fluid">
+            <div className="container">
                 <div className="row">
                     <nav className="col-md-2 d-none d-md-block bg-light sidebar">
                         <div className="sidebar-sticky">
@@ -22,14 +22,14 @@ class Sidebar extends Component {
                                 <li>
                                     <div className="nav-link" style={{ cursor: 'pointer' }} onClick={() => this.props.changePage('productList')}><i className="nc-icon nc-notes"></i>Productos</div>
                                 </li>
+                                <li>
+                                    <div className="nav-link" style={{ cursor: 'pointer' }} onClick={() => this.props.changePage('consultaAdmin')}><i className="nc-icon nc-notes"></i>Consultas</div>
+                                </li>
 
                             </ul>
-
-
                         </div>
                     </nav>
                 </div>
-
             </div>
 
         );

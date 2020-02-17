@@ -4,7 +4,7 @@ import Navbar from '../Components/Header/Navbar/Navbar';
 import Footer from '../Components/Footer/Footer';
 // import Sidebar from '../Components/Admin-Page/Sidebar/Sidebar';
 import Admin from '../Components/Admin-Page/Admin'
-import Consultas from '../Components/Consultas/Consultas';
+import Consultas from '../Components/Consultas/Cliente/Consultas';
 
 // Importing React Router
 import { BrowserRouter as Router, Route } from "react-router-dom";

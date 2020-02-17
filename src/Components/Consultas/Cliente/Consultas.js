@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import * as emailjs from 'emailjs-com';
-import '../Consultas/Consultas.scss';
+import '../Cliente/Consultas.scss';
 import Swal from 'sweetalert2/dist/sweetalert2.js'
 import 'sweetalert2/src/sweetalert2.scss'
 import { Link } from 'react-router-dom';
