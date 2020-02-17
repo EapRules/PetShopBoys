@@ -27,7 +27,7 @@ export default class Admin extends Component {
 
     render() {
         return (
-            <div className="container">
+            <div className="">
                 <Sidebar changePage={(obj) => this.changePage(obj)} />
                 {/* {this.state.isUserList ? <Userlist /> : <ProductList />} */}
                 {this.state.currentPage === 'userList' ? <Userlist /> : null}
