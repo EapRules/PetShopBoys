@@ -64,6 +64,7 @@ export class FullMarket extends Component {
             headers: { "Content-Type": "application/json", "authorization": `Bearer ${localStorage.getItem('token')}` }
         })
             .then(res => res.json())
+            // .then(res => console.log(res))
             .then(res => window.location.href = res.url)
     }
 
@@ -73,18 +74,18 @@ export class FullMarket extends Component {
 
         return (
             <section className='p-3'>
-                
+
                 <div className="row  mb-5"><div className="col"><h1 className="text-center main-title">Tienda</h1></div></div>
                 <div className="row ml-5">
 
                     <div className="col-8 row d-flex">
-                        
-                            {this.state.market.map(i => (
-                                <div className='row col-4'>
-                                <MarketCard fullMarket='true' addProduct={(name, id, qtty, price) => { this.addProduct(i.name, i._id, 1, i.price) }} stock={i.stock} imgUrl='https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' title={i.name} price={i.price} body={i.description} />
-                                </div>
 
-                            ))}
+                        {this.state.market.map(i => (
+                            <div className='row col-4'>
+                                <MarketCard fullMarket='true' addProduct={(name, id, qtty, price) => { this.addProduct(i.name, i._id, 1, i.price) }} stock={i.stock} imgUrl='https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' title={i.name} price={i.price} body={i.description} />
+                            </div>
+
+                        ))}
                     </div>
 
                     <div className="col-4">
@@ -116,7 +117,7 @@ export class FullMarket extends Component {
                                 </div>
                             </div>
                             <div>
-                                <button data-toggle={!this.state.isLoggedIn ? "modal" : null} data-target={!this.state.isLoggedIn ? "#staticBackdrop" : null} onClick={this.handleBuy} className={this.state.isLoggedIn ? 'btn w-100 btn-success' : 'btn w-100 btn-danger'}>{this.state.isLoggedIn ? 'Realizar compra' : 'Debe iniciar sesion para comprar'}</button>
+                                <button data-toggle={!this.state.isLoggedIn ? "modal" : null} data-target={!this.state.isLoggedIn ? "#staticBackdrop" : null} onClick={this.state.isLoggedIn ? this.handleBuy : null} className={this.state.isLoggedIn ? 'btn w-100 btn-success' : 'btn w-100 btn-danger'}>{this.state.isLoggedIn ? 'Realizar compra' : 'Debe iniciar sesion para comprar'}</button>
                             </div>
                             <div className={this.state.buy ? 'd-block' : 'd-none'}>
 

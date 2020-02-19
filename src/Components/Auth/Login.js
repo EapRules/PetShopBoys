@@ -6,6 +6,7 @@ import closeAllModals from '../shared/CloseModals'
 import Swal from 'sweetalert2'
 import { BeatLoader } from "react-spinners";
 import Loader from '../shared/Loader';
+import JWT from 'jsonwebtoken'
 
 export default class Login extends Component {
   constructor(props) {
@@ -46,6 +47,7 @@ export default class Login extends Component {
         console.log(data);
         this.setState({ loading: false })
         if (data.token) {
+          console.log(JWT.decode(data.token))
           localStorage.setItem("token", data.token)
           Swal.fire({
             icon: 'success',

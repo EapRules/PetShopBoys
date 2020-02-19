@@ -21,9 +21,9 @@ export default class AddProduct extends Component {
     }
 
     handleChange = (obj) => {
-        // console.log(obj.target)
         let { name, value } = obj.target
         this.setState({ [name]: value })
+        // console.log(obj.target)
     }
 
     render() {
@@ -38,7 +38,7 @@ export default class AddProduct extends Component {
                                 <form id="form">
                                     <div className="row">
                                         <div className="form-group col-sm-10">
-                                            <label htmlFor="producto">Nombre del producto</label>
+                                            <label htmlFor="producto">Nombre del productoasdasdas</label>
                                             <input value={this.state.name} onChange={this.handleChange()} type="text" name="producto" className="form-control form-control" required placeholder="ingrese el producto"></input>
                                         </div>
                                         <div className="form-group col-sm-10">
