@@ -5,10 +5,13 @@ import Market from './Market/Market'
 
 
 export default class Landing extends Component {
+
+
+
     render() {
         return (
             <React.Fragment>
-                <Slider/>
+                <Slider />
                 <Services />
                 <Market />
             </React.Fragment>

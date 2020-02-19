@@ -16,12 +16,13 @@ import Turnos from '../Components/Turnos/Turnos';
 import Success from '../Components/Screens/Success/Success';
 import Fail from '../Components/Screens/Fail/Fail';
 
+
 export default function App() {
   return (
     <div className="App">
       <Router>
         <Navbar />
-        <Route exact path='/' render={() => (<Home />)} />
+        <Route exact path='/' render={(props) => (<Home {...props} />)} />
         <Route exact path="/admin" component={Admin} />
         <Route exact path='/tienda' render={() => (<FullMarket />)} />
         <Route exact path='/turnos' render={() => (<Turnos />)} />

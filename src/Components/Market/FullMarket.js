@@ -53,7 +53,6 @@ export class FullMarket extends Component {
 
     handleBuy = i => {
         let toBuy = this.state.cart
-        console.log("toBuy Content:", toBuy)
         for (i = 0; i < toBuy.length; i++) {
             delete toBuy[i].name
             delete toBuy[i].price
@@ -64,13 +63,16 @@ export class FullMarket extends Component {
             headers: { "Content-Type": "application/json", "authorization": `Bearer ${localStorage.getItem('token')}` }
         })
             .then(res => res.json())
-            // .then(res => console.log(res))
-            .then(res => window.location.href = res.url)
+            .then(res => {
+                if (res.url) {
+                    window.location.href = res.url
+                } else {
+                    console.log(res)
+                }
+            })
     }
 
     render() {
-
-        console.log(this.state.cart)
 
         return (
             <section className='p-3'>
