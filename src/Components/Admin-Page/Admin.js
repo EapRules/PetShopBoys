@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom'
 import ProductList from './Product-list/Product-list'
 import Userlist from './User-list/User-list'
 import Sidebar from './Sidebar/Sidebar'
@@ -7,6 +8,7 @@ import Sidebar from './Sidebar/Sidebar'
 import { BrowserRouter as Router, Route, withRouter, Switch } from "react-router-dom";
 import Navbar from '../Header/Navbar/Navbar';
 import Footer from '../Footer/Footer';
+import jwt from 'jsonwebtoken'
 
 
 export default class Admin extends Component {
@@ -26,14 +28,26 @@ export default class Admin extends Component {
     }
 
     render() {
-        return (
-            <div className="container">
-                <Sidebar changePage={(obj) => this.changePage(obj)} />
-                {/* {this.state.isUserList ? <Userlist /> : <ProductList />} */}
-                {this.state.currentPage === 'userList' ? <Userlist /> : null}
-                {this.state.currentPage === 'productList' ? <ProductList /> : null}
+        let token = localStorage.getItem('token')
+        let isAdmin = token ? jwt.decode(token).isAdmin : null
 
-            </div>
-        )
+        if (token) {
+            if (!isAdmin) { return (<Redirect to='/' />) }
+            else {
+                return (
+                    <div className="container" >
+                        <Sidebar changePage={(obj) => this.changePage(obj)} />
+                        {/* {this.state.isUserList ? <Userlist /> : <ProductList />} */}
+                        {this.state.currentPage === 'userList' ? <Userlist /> : null
+                        }
+                        {this.state.currentPage === 'productList' ? <ProductList /> : null}
+
+                    </div >
+                )
+            }
+        } else {
+            return (
+                <Redirect to='/' />)
+        }
     }
 }

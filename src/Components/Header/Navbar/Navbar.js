@@ -4,6 +4,7 @@ import Login from '../Login/Auth';
 import Logo192 from '../../../images/logo192.png'
 import Profile from '../../Auth/Profile'
 import Admin from '../../Admin-Page/Admin'
+import jwt from 'jsonwebtoken'
 export default class Navbar extends Component {
 
   constructor(props) {
@@ -35,6 +36,7 @@ export default class Navbar extends Component {
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ml-auto">
+              {localStorage.getItem('token') ? <li className={jwt.decode(localStorage.getItem('token')).isAdmin ? "nav-item" : 'd-none'}><Link to='/admin' className="nav-link">Panel Administrador</Link></li> : null}
               <li className="nav-item">
                 <Link to='/tienda' className="nav-link">Tienda</Link>
               </li>
