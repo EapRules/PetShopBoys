@@ -24,6 +24,8 @@ export default function App() {
         <Route exact path='/tienda' render={() => (<FullMarket />)} />
         <Route exact path='/turnos' render={() => (<Turnos />)} />
         <Route exact path='/consultas' render={() => (<Consultas />)} />
+        <Route exact path="/compra/success" component={Success } />
+        <Route exact path="/compra/fail" component={Fail } />
         <Footer />
 
       </Router>
