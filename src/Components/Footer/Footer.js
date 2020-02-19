@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 
 export default class Footer extends Component {
@@ -26,22 +27,22 @@ export default class Footer extends Component {
                 <ul className="list-unstyled ">
                   <li>
                     <p>
-                      <a className="" href="#!">Inicio</a>
+                      <Link className="" to="/" >Inicio</Link>
                     </p>
                   </li>
                   <li>
                     <p>
-                      <a className="" href="#!">Tienda</a>
+                    <Link className="" to="/Tienda" >Tienda</Link>
                     </p>
                   </li>
                   <li>
                     <p>
-                      <a className="" href="#!">Turno </a>
+                    <Link className="" to="/Turnos" >Turno</Link>
                     </p>
                   </li>
                   <li>
                     <p>
-                      <a className="" href="#!">Consultas</a>
+                    <Link className="" to="/Consultas" >Consulta</Link>
                     </p>
                   </li>
                 </ul>
