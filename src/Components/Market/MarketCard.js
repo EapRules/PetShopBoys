@@ -8,7 +8,7 @@ export default class MarketCard extends Component {
 	}
 	render() {
 		return (
-			<div className="card shadow" style={this.props.fullMarket ? { width: 223, height: 'auto', marginBottom: "2rem" } : { width: 223, height: 400 }}>
+			<div className="card shadow mx-2" style={this.props.fullMarket ? { width: 223, height: 'auto', marginBottom: "2rem" } : { width: 223, height: 400 }}>
 				<img src={this.props.imgUrl} className="card-img-top img-fluid" alt={this.props.title} />
 				<div className="card-body">
 					<h5 className="card-title">{this.props.title} - ${this.props.price}</h5>
