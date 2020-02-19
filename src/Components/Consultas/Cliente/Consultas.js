@@ -10,16 +10,16 @@ export default class Consultas extends Component {
         super(props)
 
         this.state = {
-            "user_id": "leomoyano7@gmail.com",
+            // "user_id": "leomoyano7@gmail.com",
             "name": "",
             "lastname": "",
             "email": "",
             "phone": "",
             "pet_name": "",
-            "especie": "",
+            "species": "",
             "race": "",
             "sex": "",
-            "message_html": ""
+            "message": ""
         }
     }
 
@@ -36,49 +36,37 @@ export default class Consultas extends Component {
 
     }
 
-    //Función sentMessage: lugar donde implementamos el codigo del servicio EmailJS y enviamos correos.
-    sentMessage(event) {
-        event.preventDefault()
-
-        let templateParams = {
-            "user_id": 'leomoyano7@gmail.com',
-            "name": this.state.name,
-            "lastname": this.state.lastname,
-            "email": this.state.email,
-            "phone": this.state.phone,
-            "pet_name": this.state.pet_name,
-            "especie": this.state.especie,
-            "race": this.state.race,
-            "sex": this.state.sex,
-            "message_html": this.state.message_html
+    onSubmit = async obj => {
+        this.setState({ loading: true })
+        if (obj) {
+            obj.preventDefault();
         }
-
-        const limpiarFormulario = function () {
-            document.getElementById('consulta-form').getElementsByClassName("form-control").reset();
-        }
-
-
-        const service_id = "gmail";
-        const template_id = "vet_shop";
-        let user_id = "user_Nmod0HqZC8hWaM1GNTMOl";
-
-        emailjs.send(service_id, template_id, templateParams, user_id).then(function (response) {
-            if (response.ok) {
-                console.log('Todo bien!');
-
-            } else {
-                Swal.fire({
-                    icon: 'success',
-                    title: `¡La consulta fue enviada exitosamente!`,
-                    showConfirmButton: true,
-                    focusConfirm: false,
-                    // timer: 1500,
-                    confirmButtonText:
-                        '<a href="http://localhost:3000/" className="text-light btn-inicio">Volver al inicio</a>'
-                })
-                // document.getElementById('consulta-form').getElementsByClassName("form-control").reset();
+        fetch(
+            "https://rolling-pet-shop.herokuapp.com/contact",
+            {
+                method: "POST",
+                body: JSON.stringify(this.state),
+                headers: { "Content-Type": "application/json" }
             }
-        })
+        ).then(res => res.json())
+            .then(data => {
+                this.setState({ loading: false })
+                if (data.ok) {
+                    console.log('Todo bien!');
+
+                } else {
+                    Swal.fire({
+                        icon: 'success',
+                        title: `¡La consulta fue enviada exitosamente!`,
+                        showConfirmButton: true,
+                        focusConfirm: false,
+                        // timer: 1500,
+                        confirmButtonText:
+                            '<a href="http://localhost:3000/" className="text-light btn-inicio">Volver al inicio</a>'
+                    })
+                    // document.getElementById('consulta-form').getElementsByClassName("form-control").reset();
+                }
+            })
             .catch(function (error) {
                 Swal.fire({
                     icon: 'error',
@@ -86,7 +74,63 @@ export default class Consultas extends Component {
                     showConfirmButton: false,
                     timer: 1500
                 })
-            });
+            })
+
+    };
+
+    //Función sentMessage: lugar donde implementamos el codigo del servicio EmailJS y enviamos correos.
+    sentMessage(event) {
+        event.preventDefault()
+
+        // let obj = {
+        //     "user_id": 'leomoyano7@gmail.com',
+        //     "name": this.state.name,
+        //     "lastname": this.state.lastname,
+        //     "email": this.state.email,
+        //     "phone": this.state.phone,
+        //     "pet_name": this.state.pet_name,
+        //     "species": this.state.species,
+        //     "race": this.state.race,
+        //     "sex": this.state.sex,
+        //     "message_html": this.state.message_html
+        // }
+
+        const limpiarFormulario = function () {
+            document.getElementById('consulta-form').getElementsByClassName("form-control").reset();
+        }
+
+
+
+
+        // const service_id = "gmail";
+        // const template_id = "vet_shop";
+        // let user_id = "user_Nmod0HqZC8hWaM1GNTMOl";
+
+        // emailjs.send(service_id, template_id, templateParams, user_id).then(function (response) {
+        //     if (response.ok) {
+        //         console.log('Todo bien!');
+
+        //     } else {
+        //         Swal.fire({
+        //             icon: 'success',
+        //             title: `¡La consulta fue enviada exitosamente!`,
+        //             showConfirmButton: true,
+        //             focusConfirm: false,
+        //             // timer: 1500,
+        //             confirmButtonText:
+        //                 '<a href="http://localhost:3000/" className="text-light btn-inicio">Volver al inicio</a>'
+        //         })
+        //         // document.getElementById('consulta-form').getElementsByClassName("form-control").reset();
+        //     }
+        // })
+        // .catch(function (error) {
+        //     Swal.fire({
+        //         icon: 'error',
+        //         title: `No se pudo enviar el correo :(`,
+        //         showConfirmButton: false,
+        //         timer: 1500
+        //     })
+        // });
     }
 
 
@@ -112,7 +156,12 @@ export default class Consultas extends Component {
                  </p>
                 </div>
 
-                <form id="consulta-form" className="py-5" name={this.props.name} method={this.props.method} action={this.props.action} >
+                <form id="consulta-form" onSubmit={this.onSubmit} className="py-5">
+                    {/* 
+                              name={this.props.name} 
+                method={this.props.method}  
+                action={this.props.action} 
+                 > */}
 
                     <h2 className="text-center font-weight-bold">Sus datos personales</h2>
                     <div class="row py-1 justify-content-around md-form">
@@ -134,8 +183,8 @@ export default class Consultas extends Component {
                     <h2 className="text-center mt-3 font-weight-bold">Sobre su Mascota</h2>
                     <div class="row py-3 justify-content-around">
                         <div class="form-group col-md-5">
-                            <label>Especie</label>
-                            <select class="form-control" name="especie" required="required" onChange={this.handleInputChange.bind(this)} value={this.state.especie}>
+                            <label>species</label>
+                            <select class="form-control" name="species" required="required" onChange={this.handleInputChange.bind(this)} value={this.state.species}>
                                 <option selected>Elegir...</option>
                                 <option value="Canino">Canino</option>
                                 <option value="Felino">Felino</option>
@@ -158,12 +207,12 @@ export default class Consultas extends Component {
                         </div>
                         <div className="form-group my-5">
                             <label>Escriba su consulta aquí</label>
-                            <textarea name="message_html" className="form-control textarea-consulta" rows="5" required="required" onChange={this.handleInputChange.bind(this)} value={this.state.message_html}></textarea>
+                            <textarea name="message" className="form-control textarea-consulta" rows="5" required="required" onChange={this.handleInputChange.bind(this)} value={this.state.message}></textarea>
                         </div>
                     </div>
 
                     <div className="text-center">
-                        <button className="btn btn-info" onClick={this.sentMessage.bind(this)}>Enviar Consulta</button>
+                        <button type="submit" className="btn btn-info" >Enviar Consulta</button>
                     </div>
                 </form>
 
