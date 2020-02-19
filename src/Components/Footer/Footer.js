@@ -5,8 +5,8 @@ export default class Footer extends Component {
   render() {
     return (
       <div>
-        <hr/>
-        <div className="   blue darken-2">
+        
+        <div className="alert-success">
 
 
           <div className="container text-center text-md-left">
@@ -47,8 +47,6 @@ export default class Footer extends Component {
                 </ul>
 
               </div>
-
-
 
               <hr className="clearfix w-100 d-md-none" />
 
