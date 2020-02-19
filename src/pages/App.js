@@ -13,6 +13,8 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from './Home'
 import FullMarket from '../Components/Market/FullMarket'
 import Turnos from '../Components/Turnos/Turnos';
+import Success from '../Components/Screens/Success/Success';
+import Fail from '../Components/Screens/Fail/Fail';
 
 export default function App() {
   return (
@@ -25,7 +27,7 @@ export default function App() {
         <Route exact path='/turnos' render={() => (<Turnos />)} />
         <Route exact path='/consultas' render={() => (<Consultas />)} />
         <Route exact path="/compra/success" component={Success } />
-        <Route exact path="/compra/fail" component={Fail } />
+        <Route exact path="/compra/failure" component={Fail } />
         <Footer />
 
       </Router>

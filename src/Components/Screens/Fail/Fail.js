@@ -8,16 +8,14 @@ export default class Fail extends Component {
         return (
             <div className="row1">
 
-                <div className="text-center">
-                </div>
 
-                <div class="text-center bg-fail">
-                    <div className="img">
+                <div class="text-center p-3  ">
+                    <div className="img mb-2">
                         <img className="card-img-top img-fluid img-2" src={imagen2}  alt="..." />
                     </div>
 
-                    <div className="text-center">
-                        <h1>Algo paso verificar!</h1>
+                    <div className="text-center bg-danger ">
+                        <h1>Su compra no se pudo realizar. Intente nuevamente.</h1>
                     </div>
 
                 </div>
