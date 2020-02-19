@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Login from '../Login/Auth';
-import Profile from '../../Auth/Profile';
+import Logo192 from '../../../images/logo192.png'
+import Profile from '../../Auth/Profile'
+import Admin from '../../Admin-Page/Admin'
 export default class Navbar extends Component {
 
   constructor(props) {
@@ -22,14 +24,12 @@ export default class Navbar extends Component {
   render() {
     return (
       <div>
-        <div className="alert alert-success text-center" role="alert">
-          <p className="text-dark">EMERGENCIAS: <a href='tel:0800-0303-456'>0800-0303-456</a></p>
+        <div class="alert alert-success text-center" role="alert">
+          <p class="text-danger"><strong>EMERGENCIAS - 0800-234-2345</strong></p>
         </div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <Link to='/' className="navbar-brand">
-            <img src={process.env.PUBLIC_URL + `./img/logo.png`} width="30" height="30" className="d-inline-block align-top" alt="Logo Petchop" />
-            PetShopBoys
-            </Link>
+          <Link exact to="/" className="navbar-brand" href="#">
+            <img src={Logo192} width="30" height="30" className="d-inline-block align-top rounded shadow" alt="" /><strong className="shadow">  PetShopBoys</strong></Link>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -42,7 +42,10 @@ export default class Navbar extends Component {
                 <Link to='/turnos' className="nav-link">Turno!</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="http://localhost:3000">Consulta</a>
+                <Link exact to="/consultas" className="nav-link" href="#">Consulta</Link>
+              </li>
+              <li className="nav-item">
+                {/* <Link exact to="/a className="nav-link" href="#">Admin</Link> */}
               </li>
               <li className="nav-item">
                 {
@@ -58,7 +61,7 @@ export default class Navbar extends Component {
                         <button className='dropdown-item' onClick={this.logOut}>Cerrar Sesion</button>
                       </div>
                     </div>
-                    : <button type="button" className="btn btn-success btn-sm" data-toggle="modal" data-target="#staticBackdrop">
+                    : <button type="button" className="btn btn-success btn-sm mt-1" data-toggle="modal" data-target="#staticBackdrop">
                       <i className="fas fa-user-circle"></i> Ingresar
                 </button>}
               </li>

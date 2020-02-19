@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import '../Slider/Slider.scss';
-import image1 from '../../images/Slider-images/petshop.png'
-import image2 from '../../images/Slider-images/consultas.png'
-import image3 from '../../images/Slider-images/internacion.png'
-import image4 from '../../images/Slider-images/emergencias.png'
+import style from '../Slider/Slider.scss';
+import image1 from '../../../images/Slider-images/petshop.png'
+import image2 from '../../../images/Slider-images/consultas.png'
+import image3 from '../../../images/Slider-images/internacion.png'
+import image4 from '../../../images/Slider-images/emergencias.png'
 
 class Slider extends Component {
     render() {
@@ -60,6 +60,7 @@ class Slider extends Component {
                     <span className="carousel-control-next-icon" aria-hidden="true"></span>
                     <span className="sr-only">Next</span>
                 </a>
+                <hr/>
             </div>
         );
     }

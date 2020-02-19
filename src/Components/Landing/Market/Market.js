@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { Redirect } from 'react-router-dom'
-import MarketCard from './MarketCard'
+import MarketCard from './Card'
 import YouTube from 'react-youtube'
 
 export default class Market extends Component {

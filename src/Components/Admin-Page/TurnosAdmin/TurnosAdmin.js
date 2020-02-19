@@ -1,22 +1,18 @@
 import React, { Component } from 'react'
-
 export default class TurnosAdmin extends Component {
     constructor(props) {
         super(props)
-        this.state = { 
+        this.state = {
             TurnosAdmin: []
         }
     }
     componentDidMount() {
-
         fetch('https://rolling-pet-shop.herokuapp.com/turns', {
             method: "GET",
             headers: { "Content-Type": "application/json", "authorization": `Bearer ${localStorage.getItem('token')}` }
         })
             .then(res => res.json())
             .then(res => this.setState({ TurnosAdmin: res.result }))
-
-
     }
     render() {
         return (
@@ -38,9 +34,7 @@ export default class TurnosAdmin extends Component {
                                 <td>{item.ownerName}</td>
                                 <td>{item.date}</td>
                             </tr>
-
                         ))}
-
                     </tbody>
                 </table>
             </div>

@@ -5,6 +5,7 @@ export default class Footer extends Component {
   render() {
     return (
       <div>
+        <hr/>
         <div className="   blue darken-2">
 
 
@@ -36,7 +37,10 @@ export default class Footer extends Component {
                   <li>
                     <p>
                       <a className="" href="#!">Turno </a>
+<<<<<<< HEAD
                       <a className="" href="#!">Sobre Nosotros</a>
+=======
+>>>>>>> 0dc2852fbb1a238c3e995ce249e8a3d616a2edda
                     </p>
                   </li>
                   <li>
@@ -65,7 +69,11 @@ export default class Footer extends Component {
                   </li>
                   <li>
                     <p>
+<<<<<<< HEAD
                       <i className="fas fa-envelope mr-3"></i> info@petshopboys.com</p>
+=======
+                      <i className="fas fa-envelope mr-3"></i> info@Petshops.com</p>
+>>>>>>> 0dc2852fbb1a238c3e995ce249e8a3d616a2edda
                   </li>
                   <li>
                     <p>
@@ -114,7 +122,7 @@ export default class Footer extends Component {
           </div>
 
           <div className="footer-copyright text-center py-3 blue darken-3">© 2018 Copyright:
-            <a className="" href="index.html"> Rolling Bank</a>
+            <a className="" href="index.html"> PetShopBoys </a>
           </div>
 
 

@@ -67,7 +67,7 @@ export default class Turnos extends Component {
                     color={"green"}
                     loading={this.state.loading}
                 />
-                <h1 className="text-center m-5">Turnos</h1>
+                <h1 className="text-center m-5 main-title">Turnos</h1>
                 <div className="row m-5">
                     <div className="col-5">
                         <div>
