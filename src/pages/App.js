@@ -26,7 +26,7 @@ export default function App() {
         <Route exact path='/turnos' render={() => (<Turnos />)} />
         <Route exact path='/consultas' render={() => (<Consultas />)} />
         <Footer />
-        <TurnosAdmin />
+        
 
       </Router>
     </div>

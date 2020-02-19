@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 
 export default class Footer extends Component {
@@ -26,26 +27,22 @@ export default class Footer extends Component {
                 <ul className="list-unstyled ">
                   <li>
                     <p>
-                      <a className="" href="#!">Inicio</a>
+                      <Link className="" to="/" >Inicio</Link>
                     </p>
                   </li>
                   <li>
                     <p>
-                      <a className="" href="#!">Tienda</a>
+                    <Link className="" to="/Tienda" >Tienda</Link>
                     </p>
                   </li>
                   <li>
                     <p>
-                      <a className="" href="#!">Turno </a>
-<<<<<<< HEAD
-                      <a className="" href="#!">Sobre Nosotros</a>
-=======
->>>>>>> 0dc2852fbb1a238c3e995ce249e8a3d616a2edda
+                    <Link className="" to="/Turnos" >Turno</Link>
                     </p>
                   </li>
                   <li>
                     <p>
-                      <a className="" href="#!">Consultas</a>
+                    <Link className="" to="/Consultas" >Consulta</Link>
                     </p>
                   </li>
                 </ul>
@@ -69,11 +66,7 @@ export default class Footer extends Component {
                   </li>
                   <li>
                     <p>
-<<<<<<< HEAD
-                      <i className="fas fa-envelope mr-3"></i> info@petshopboys.com</p>
-=======
                       <i className="fas fa-envelope mr-3"></i> info@Petshops.com</p>
->>>>>>> 0dc2852fbb1a238c3e995ce249e8a3d616a2edda
                   </li>
                   <li>
                     <p>
