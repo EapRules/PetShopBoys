@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom'
 import ProductList from './Product-list/Product-list'
 import Userlist from './User-list/User-list'
 import Sidebar from './Sidebar/Sidebar'
@@ -8,6 +9,7 @@ import ConsultaAdmin from '../Consultas/Admin/ConsultaAdmin'
 import { BrowserRouter as Router, Route, withRouter, Switch } from "react-router-dom";
 import Navbar from '../Header/Navbar/Navbar';
 import Footer from '../Footer/Footer';
+import jwt from 'jsonwebtoken'
 
 
 
@@ -28,6 +30,7 @@ export default class Admin extends Component {
     }
 
     render() {
+<<<<<<< HEAD
         return (
             <div className="container">
                 <Sidebar changePage={(obj) => this.changePage(obj)} />
@@ -38,5 +41,28 @@ export default class Admin extends Component {
 
             </div>
         )
+=======
+        let token = localStorage.getItem('token')
+        let isAdmin = token ? jwt.decode(token).isAdmin : null
+
+        if (token) {
+            if (!isAdmin) { return (<Redirect to='/' />) }
+            else {
+                return (
+                    <div className="container" >
+                        <Sidebar changePage={(obj) => this.changePage(obj)} />
+                        {/* {this.state.isUserList ? <Userlist /> : <ProductList />} */}
+                        {this.state.currentPage === 'userList' ? <Userlist /> : null
+                        }
+                        {this.state.currentPage === 'productList' ? <ProductList /> : null}
+
+                    </div >
+                )
+            }
+        } else {
+            return (
+                <Redirect to='/' />)
+        }
+>>>>>>> 9b689a9d0e411ee54d727e8ce47999906c637a2b
     }
 }

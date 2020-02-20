@@ -64,7 +64,6 @@ export default class Consultas extends Component {
                         confirmButtonText:
                             '<a href="http://localhost:3000/" className="text-light btn-inicio">Volver al inicio</a>'
                     })
-                    // document.getElementById('consulta-form').getElementsByClassName("form-control").reset();
                 }
             })
             .catch(function (error) {
