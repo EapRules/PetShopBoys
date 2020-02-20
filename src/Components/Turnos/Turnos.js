@@ -14,17 +14,23 @@ export default class Turnos extends Component {
         this.state = {
             hour: '',
             day: '',
+            description: '',
             ownerName: '',
             petName: '',
             date: '',
             DataTurnos: [],
             loading: false,
-            startDate: new Date()
+            startDate: new Date(),
+            turnoMañana: [{ texto: "9:00 am", hour: "09:00" }, { texto: "9:30 pm", hour: "09:30" }, { texto: "10:00 pm", hour: "10:00" },
+            { texto: "10:30 pm", hour: "10:30" }, { texto: "11:00 pm", hour: "11:00" }, { texto: "11:30 pm", hour: "11:30" }],
+            turnoTarde: [{ texto: "6:00 pm", hour: "06:00" }, { texto: "6:30 pm", hour: "06:30" }, { texto: "7:00 pm", hour: "07:00" },
+            { texto: "7:30 pm", hour: "07:30" }, { texto: "8:00 pm", hour: "08:00" }, { texto: "8:30 pm", hour: "08:30" }]
         }
     }
     componentDidMount() {
         let token = localStorage.getItem("token");
         this.setState({ isLoggedIn: token ? true : false });
+        console.log(this.state.turnoMañana);
 
     }
 
@@ -65,7 +71,8 @@ export default class Turnos extends Component {
                     {
                         ownerName: `${this.state.ownerName}`,
                         petName: `${this.state.petName}`,
-                        date: `${this.state.day}T${this.state.hour}`
+                        date: `${this.state.day}T${this.state.hour}`,
+                        description: `${this.state.description}`,
                     }
                 ),
                 headers: {
@@ -80,7 +87,7 @@ export default class Turnos extends Component {
         if (!res.errors) {
             Swal.fire({
                 icon: 'success',
-                title: `${moment(res.date).format('[El] DD [de] MMMM, [a las] h:mm a')}`,
+                title: `${moment.utc(res.date).format('[El] DD [de] MMMM, [a las] h:mm a')}`,
                 text: `Turno creado con exito`,
                 showConfirmButton: true
             })
@@ -94,6 +101,9 @@ export default class Turnos extends Component {
             })
         }
         this.getDataByday()
+        console.log('====================================');
+        console.log(res.date);
+        console.log('====================================');
     };
 
     render() {
@@ -136,33 +146,33 @@ export default class Turnos extends Component {
                                     ))} */}
                                         <tr>
                                             <td >9:00 am</td>
-                                            <td><button type="button" class="btn btn-primary btn-sm" name="hour" value="12:00" onClick={this.handleChange}>Agendar</button>
+                                            <td><button type="button" class="btn btn-primary btn-sm" name="hour" value="09:00" onClick={this.handleChange}>Agendar</button>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>9:30 am</td>
-                                            <td><button type="button" class="btn btn-primary btn-sm" name="hour" value="12:30" onClick={this.handleChange}>Agendar</button>
+                                            <td><button type="button" class="btn btn-primary btn-sm" name="hour" value="09:30" onClick={this.handleChange}>Agendar</button>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>10:00 am</td>
                                             <td>
-                                                <button type="button" class="btn btn-primary btn-sm" name="hour" value="13:00" onClick={this.handleChange}>Agendar</button>
+                                                <button type="button" class="btn btn-primary btn-sm" name="hour" value="10:00" onClick={this.handleChange} >Agendar</button>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>10:30 am</td>
-                                            <td><button type="button" class="btn btn-primary btn-sm" name="hour" value="13:30" onClick={this.handleChange}>Agendar</button>
+                                            <td><button type="button" class="btn btn-primary btn-sm" name="hour" value="10:30" onClick={this.handleChange}>Agendar</button>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>11:00 am</td>
-                                            <td><button type="button" class="btn btn-primary btn-sm" name="hour" value="14:00" onClick={this.handleChange}>Agendar</button>
+                                            <td><button type="button" class="btn btn-primary btn-sm" name="hour" value="11:00" onClick={this.handleChange}>Agendar</button>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>11:30 am</td>
-                                            <td><button type="button" class="btn btn-primary btn-sm" name="hour" value="14:30" onClick={this.handleChange}>Agendar</button>
+                                            <td><button type="button" class="btn btn-primary btn-sm" name="hour" value="11:30" onClick={this.handleChange}>Agendar</button>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -176,45 +186,14 @@ export default class Turnos extends Component {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {/* {this.state.DataTurnos.map((item, i) => (
-                                        <tr>
-                                            <th key={i}>{i}</th>
-                                            <td>{item.petName}</td>
-                                            <td>{item.ownerName}</td>
-                                            <td>{item.date}</td>
-                                        </tr>
-                                    ))} */}
-                                        <tr>
-                                            <td>6:00 pm</td>
-                                            <td><button type="button" class="btn btn-primary btn-sm" name="hour" value="21:00" onClick={this.handleChange}>Agendar</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>6:30 pm</td>
-                                            <td><button type="button" class="btn btn-primary btn-sm" name="hour" value="21:30" onClick={this.handleChange}>Agendar</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>7:00 pm</td>
-                                            <td>
-                                                <button type="button" class="btn btn-primary btn-sm" name="hour" value="22:00" onClick={this.handleChange}>Agendar</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>7:30 pm</td>
-                                            <td><button type="button" class="btn btn-primary btn-sm" name="hour" value="22:30" onClick={this.handleChange}>Agendar</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>8:00 pm</td>
-                                            <td><button type="button" class="btn btn-primary btn-sm" name="hour" value="23:00" onClick={this.handleChange}>Agendar</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>8:30 pm</td>
-                                            <td><button type="button" class="btn btn-primary btn-sm" name="hour" value="23:30" onClick={this.handleChange}>Agendar</button>
-                                            </td>
-                                        </tr>
+                                        {this.state.turnoTarde.map((item, i) => (
+                                            <tr>
+
+                                                <td>{item.texto}</td>
+                                                <button type="button" class="btn btn-primary btn-sm m-1" name="hour" value={item.hour} onClick={this.handleChange}>Agendar</button>
+                                            </tr>
+                                        ))}
+
                                     </tbody>
                                 </table>
                             </div>
@@ -240,7 +219,7 @@ export default class Turnos extends Component {
                                 <div>
                                     <div className="form-group textarea-turno">
                                         <label>Escriba su consulta aquí</label>
-                                        <textarea name="message_html" className="form-control" rows="9" cols="5" ></textarea>
+                                        <textarea name="message_html" className="form-control" name="description" onChange={this.handleChange} value={this.state.description} rows="9" cols="5" ></textarea>
 
                                     </div>
                                 </div>
