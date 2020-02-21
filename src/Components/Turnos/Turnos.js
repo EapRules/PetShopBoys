@@ -3,10 +3,6 @@ import Swal from 'sweetalert2'
 import { BeatLoader } from "react-spinners";
 import Loader from '../shared/Loader';
 import moment from 'moment'
-
-
-
-
 export default class Turnos extends Component {
 
     constructor(props) {
@@ -20,49 +16,56 @@ export default class Turnos extends Component {
             date: '',
             DataTurnos: [],
             loading: false,
-            startDate: new Date(),
-            turnoMañana: [{ texto: "9:00 am", hour: "09:00" }, { texto: "9:30 pm", hour: "09:30" }, { texto: "10:00 pm", hour: "10:00" },
-            { texto: "10:30 pm", hour: "10:30" }, { texto: "11:00 pm", hour: "11:00" }, { texto: "11:30 pm", hour: "11:30" }],
-            turnoTarde: [{ texto: "6:00 pm", hour: "06:00" }, { texto: "6:30 pm", hour: "06:30" }, { texto: "7:00 pm", hour: "07:00" },
-            { texto: "7:30 pm", hour: "07:30" }, { texto: "8:00 pm", hour: "08:00" }, { texto: "8:30 pm", hour: "08:30" }]
+            newDispdias: []
         }
     }
+    defaultTurns = ["09:00", "09:30", "10:00", "10:00", "10:30", "11:00", "11:30"];
+
     componentDidMount() {
         let token = localStorage.getItem("token");
         this.setState({ isLoggedIn: token ? true : false });
-        console.log(this.state.turnoMañana);
 
     }
 
-    getDataByday() {
+    getTurnsByday() {
+        this.setState({ loading: true })
         let selectDate = this.state.day
         fetch(
             `https://rolling-pet-shop.herokuapp.com/turns?date=${selectDate}`,
             {
-                method: "Get",
+                method: "GET",
                 headers: {
                     "Content-Type": "application/json",
                     "authorization": `Bearer ${localStorage.getItem("token")}`
                 }
             }
         ).then(res => res.json())
-            .then(res => this.setState({ DataTurnos: res.result }))
+            .then(res => { this.listAvailable(res.result); this.componentDidMount() })
     }
+
+
+
+    listAvailable(diasOcupados) {
+        const horarios = [... this.defaultTurns]
+        diasOcupados.map((item) => {
+            const index = horarios.findIndex(horario => moment.utc(item.date).format('HH:mm') == horario)
+            horarios.splice(index, 1)
+        })
+        this.setState({ newDispdias: horarios })
+        this.setState({ loading: false })
+    }
+
     handleChange = obj => {
-        this.getDataByday()
         let { name, value } = obj.target
         this.setState({ [name]: value })
         console.log(this.state);
-
     }
 
     onSubmit = async obj => {
-
         this.setState({ loading: true })
         if (obj) {
             obj.preventDefault();
         }
-
         const response = await fetch(
             "https://rolling-pet-shop.herokuapp.com/turns",
             {
@@ -100,10 +103,11 @@ export default class Turnos extends Component {
                 timer: 1500
             })
         }
-        this.getDataByday()
-        console.log('====================================');
+        this.getTurnsByday()
+        console.log('=====Turno creado para el dia=======');
         console.log(res.date);
         console.log('====================================');
+
     };
 
     render() {
@@ -136,61 +140,10 @@ export default class Turnos extends Component {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {/* {this.state.DataTurnos.map((item, i) => (
-                                        <tr>
-                                            <th key={i}>{i}</th>
-                                            <td>{item.petName}</td>
-                                            <td>{item.ownerName}</td>
-                                            <td>{item.date}</td>
-                                        </tr>
-                                    ))} */}
-                                        <tr>
-                                            <td >9:00 am</td>
-                                            <td><button type="button" class="btn btn-primary btn-sm" name="hour" value="09:00" onClick={this.handleChange}>Agendar</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>9:30 am</td>
-                                            <td><button type="button" class="btn btn-primary btn-sm" name="hour" value="09:30" onClick={this.handleChange}>Agendar</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>10:00 am</td>
-                                            <td>
-                                                <button type="button" class="btn btn-primary btn-sm" name="hour" value="10:00" onClick={this.handleChange} >Agendar</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>10:30 am</td>
-                                            <td><button type="button" class="btn btn-primary btn-sm" name="hour" value="10:30" onClick={this.handleChange}>Agendar</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>11:00 am</td>
-                                            <td><button type="button" class="btn btn-primary btn-sm" name="hour" value="11:00" onClick={this.handleChange}>Agendar</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>11:30 am</td>
-                                            <td><button type="button" class="btn btn-primary btn-sm" name="hour" value="11:30" onClick={this.handleChange}>Agendar</button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div className="col-lg-6 col-xs-12" >
-                                <table className="table table-borderless table-sm table-white text-center">
-                                    <thead class="table-success">
-                                        <tr >
-                                            <th colspan="2">Turnos tarde</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {this.state.turnoTarde.map((item, i) => (
+                                        {this.state.newDispdias.map(item => (
                                             <tr>
-
-                                                <td>{item.texto}</td>
-                                                <button type="button" class="btn btn-primary btn-sm m-1" name="hour" value={item.hour} onClick={this.handleChange}>Agendar</button>
+                                                <td>{item}</td>
+                                                <button type="button" class="btn btn-primary btn-sm m-1" name="hour" value={item} onClick={this.handleChange}>Agendar</button>
                                             </tr>
                                         ))}
 
@@ -225,6 +178,7 @@ export default class Turnos extends Component {
                                 </div>
                             </div>
                             <button type={this.state.isLoggedIn ? "submit" : "button"} className={this.state.isLoggedIn ? 'btn w-100 btn-success' : 'btn w-100 btn-danger'}>{this.state.isLoggedIn ? 'Solicitar Turno' : 'Debe iniciar sesion para Solicitar un Turno'}</button>
+
                         </form>
                     </div>
                 </div>
