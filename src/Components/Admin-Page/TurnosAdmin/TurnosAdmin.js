@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import moment from 'moment'
 export default class TurnosAdmin extends Component {
     constructor(props) {
         super(props)
@@ -32,7 +33,7 @@ export default class TurnosAdmin extends Component {
                                 <th key={i}>{i}</th>
                                 <td>{item.petName}</td>
                                 <td>{item.ownerName}</td>
-                                <td>{item.date}</td>
+                                <td>{moment(item.date).format('LLL')}</td>
                             </tr>
                         ))}
                     </tbody>
