@@ -195,8 +195,8 @@ export default class Consultas extends Component {
                             <label>Sexo</label>
                             <select className="form-control" name="sex" required="required" onChange={this.handleInputChange.bind(this)} value={this.state.sex}>
                                 <option selected>Elegir...</option>
-                                <option value="Masculino">Macho</option>
-                                <option value="Femenino">Hembra</option>
+                                <option value="Macho">Macho</option>
+                                <option value="Hembra">Hembra</option>
                             </select>
                         </div>
                         <div className="col-5">

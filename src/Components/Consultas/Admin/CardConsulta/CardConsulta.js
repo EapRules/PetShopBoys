@@ -43,7 +43,7 @@ export default class CardConsulta extends Component {
                                     <h2 className="col-12 text-center font-weight-bold">{this.props.name} {this.props.lastname}</h2>
                                 </div>
                                 <div className="row my-2">
-                                    <p className="col-6 text-center"><strong>Email:</strong> {this.props.name}</p>
+                                    <p className="col-6 text-center"><strong>Email:</strong> {this.props.email}</p>
                                     <p className="col-6 text-center"><strong>Telefono:</strong> {this.props.phone}</p>
                                 </div>
                                 <hr class="my-4"></hr>
