@@ -18,20 +18,42 @@ export default class ConsultaAdmin extends Component {
         })
             .then(response =>  response.json() )
             .then(response => { this.setState({ contactAdmin: response });
-                // console.log(response);
+             console.log(response);
             })
     }
 
 
     render() {
         return (
-            <div className="container">
-                    {this.state.contactAdmin.map(item => <p>{item.name}</p>)}
-                <h2 className="text-center">Consultas</h2>
+            <div className="container-fluid">
+                    {/* {this.state.contactAdmin.map(item => <p>{item.name}</p>)} */}
+                <h1 className="text-center">Consultas</h1>
                 <div className="row justify-content-around">
-                    <CardConsulta></CardConsulta>
-                    <CardConsulta></CardConsulta>
-                    <CardConsulta></CardConsulta>
+
+               
+
+                {this.state.contactAdmin.map((item ,index) => 
+                
+                <CardConsulta 
+                name={item.name} 
+                lastname={item.lastname}
+                phone={item.phone}
+                email={item.email} 
+                species={item.species} 
+                race={item.race}
+                sex={item.sex}
+                message={item.message}
+                pet_name={item.pet_name}
+                id={item._id}
+                >
+                </CardConsulta>
+                
+                )}
+
+                
+                    
+
+               
                 </div>
             </div>
         )

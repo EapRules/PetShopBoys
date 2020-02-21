@@ -1,9 +1,11 @@
 .card{
-    box-shadow: -1px 2px 51px -27px rgba(0,0,0,0.75);
+    width: 30vw !important;
+    box-shadow: 6px 4px 24px -10px rgba(0,0,0,0.75);
     text-align: center;
     background: linear-gradient(to bottom, #d4edda, #e2e2e2);
     .card-body{
         padding: 5px;
+        width: 100% !important;
     }
     .card-text{
         text-overflow: ellipsis !important;
@@ -17,3 +19,21 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
+.modal-consulta{
+   .modal-dialog{
+       border-radius: 5px;
+    box-shadow: 6px 4px 24px -10px rgba(0,0,0,0.75) !important;
+    background: linear-gradient(to bottom, #d4edda, #e2e2e2) !important;
+   }
+   .cont-consulta{
+    border-radius: 5px;
+    width: 35vw;
+    height: 15vh;
+    background: #e2e2e2;
+    .text-consulta{
+        font-weight: 400;
+        text-align: left;
+    }
+   }
+
+}

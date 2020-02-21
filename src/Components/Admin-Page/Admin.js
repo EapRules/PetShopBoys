@@ -30,18 +30,6 @@ export default class Admin extends Component {
     }
 
     render() {
-<<<<<<< HEAD
-        return (
-            <div className="container">
-                <Sidebar changePage={(obj) => this.changePage(obj)} />
-                {/* {this.state.isUserList ? <Userlist /> : <ProductList />} */}
-                {this.state.currentPage === 'userList' ? <Userlist /> : null}
-                {this.state.currentPage === 'productList' ? <ProductList /> : null}
-                {this.state.currentPage === 'consultaAdmin' ? <ConsultaAdmin /> : null}
-
-            </div>
-        )
-=======
         let token = localStorage.getItem('token')
         let isAdmin = token ? jwt.decode(token).isAdmin : null
 
@@ -55,6 +43,7 @@ export default class Admin extends Component {
                         {this.state.currentPage === 'userList' ? <Userlist /> : null
                         }
                         {this.state.currentPage === 'productList' ? <ProductList /> : null}
+                        {this.state.currentPage === 'consultaAdmin' ? <ConsultaAdmin /> : null}
 
                     </div >
                 )
@@ -63,6 +52,5 @@ export default class Admin extends Component {
             return (
                 <Redirect to='/' />)
         }
->>>>>>> 9b689a9d0e411ee54d727e8ce47999906c637a2b
     }
 }
