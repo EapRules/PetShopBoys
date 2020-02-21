@@ -177,7 +177,7 @@ export default class Consultas extends Component {
                             <input type="email" name="email" class="form-control input-consulta" placeholder="Email" required="required" onChange={this.handleInputChange.bind(this)} value={this.state.email} />
                         </div>
                         <div class="col-5">
-                            <input type="text" name="phone" class="form-control input-consulta" placeholder="Telefono" required="required" onChange={this.handleInputChange.bind(this)} value={this.state.phone} />
+                            <input type="number" name="phone" class="form-control input-consulta" placeholder="Telefono" required="required" onChange={this.handleInputChange.bind(this)} value={this.state.phone} />
                         </div>
                     </div>
                     <h2 className="text-center mt-3 font-weight-bold">Sobre su Mascota</h2>
