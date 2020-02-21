@@ -1,5 +1,17 @@
 import React, { Component } from 'react'
 export default class UserList extends Component {
+
+    componentDidMount() {
+        fetch("https://rolling-pet-shop.herokuapp.com/users/admin/users", {
+            method: "POST",
+            // body: JSON.stringify({ products: toBuy }),
+            headers: { "Content-Type": "application/json", "authorization": `Bearer ${localStorage.getItem('token')}` }
+        })
+            // .then(res => res.json())
+            .then(res => console.log(res)).catch(err => console.log(err))
+    }
+
+
     render() {
         return (
             <div>
@@ -11,13 +23,13 @@ export default class UserList extends Component {
                 <div className="contenedor-tabla m-4">
                     <table className="table table-hover table-dark">
                         <thead>
-                        <tr>
+                            <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">nombre</th>
                                 <th scope="col">apellido</th>
                                 <th scope="col">telefono</th>
                                 <th scope="col">email</th>
-                                
+
                             </tr>
                         </thead>
                         <tbody>

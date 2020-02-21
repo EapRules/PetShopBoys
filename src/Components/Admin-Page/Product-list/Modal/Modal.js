@@ -7,7 +7,8 @@ class Modal extends React.Component {
             name: "",
             description: "",
             price: 0,
-            stock: 0
+            stock: 0,
+            url: ""
         };
     }
     handleInput = e => {
@@ -34,29 +35,12 @@ class Modal extends React.Component {
                 <div className="text-right w-100 sticky-top" style={{ top: "10px" }}>
                     <button type="button" className="btn btn-primary  mr-3" data-toggle="modal" data-target="#exampleModal" > Agregar producto </button>
                 </div>
-                <div
-                    className="modal fade"
-                    id="exampleModal"
-                    tabIndex="-1"
-                    role="dialog"
-                    aria-labelledby="exampleModalLabel"
-                    aria-hidden="true"
-                >
+                <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
                     <div className="modal-dialog" role="document">
                         <div className="modal-content">
                             <div className="modal-header">
-                                <h5 className="modal-title" id="exampleModalLabel">
-                                    Nuevo producto
-                </h5>
-                                <button
-                                    type="button"
-                                    className="close"
-                                    data-dismiss="modal"
-                                    aria-label="Close"
-                                >
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
+                                <h5 className="modal-title" id="exampleModalLabel">Nuevo producto</h5>
+                                <button type="button" className="close" data-dismiss="modal" aria-label="Close" ><span aria-hidden="true">&times;</span></button></div>
                             <div className="modal-body">
                                 <label forhtml="exampleInputEmail1">Nombre</label>
                                 <input type="text" className="form-control" placeholder="Nombre" name="name" onChange={this.handleInput} />
