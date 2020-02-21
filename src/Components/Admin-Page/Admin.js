@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom'
 import ProductList from './Product-list/Product-list'
 import Userlist from './User-list/User-list'
 import Sidebar from './Sidebar/Sidebar'
+import TurnosAdmin from './TurnosAdmin/TurnosAdmin'
 
 // Importing React Router
 import { BrowserRouter as Router, Route, withRouter, Switch } from "react-router-dom";
@@ -41,6 +42,7 @@ export default class Admin extends Component {
                         {this.state.currentPage === 'userList' ? <Userlist /> : null
                         }
                         {this.state.currentPage === 'productList' ? <ProductList /> : null}
+                        {this.state.currentPage === 'turnosAdmin' ? <TurnosAdmin /> : null}
 
                     </div >
                 )

@@ -22,6 +22,9 @@ class Sidebar extends Component {
                                 <li>
                                     <div className="nav-link" style={{ cursor: 'pointer' }} onClick={() => this.props.changePage('productList')}><i className="nc-icon nc-notes"></i>Productos</div>
                                 </li>
+                                <li>
+                                    <div className="nav-link" style={{ cursor: 'pointer' }} onClick={() => this.props.changePage('turnosAdmin')}><i className="nc-icon nc-circle-09"></i>Turnos</div>
+                                </li>
 
                             </ul>
 
