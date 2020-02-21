@@ -28,7 +28,7 @@ export default class Turnos extends Component {
     }
 
     getTurnsByday() {
-        this.setState({ loading: true })
+
         let selectDate = this.state.day
         fetch(
             `https://rolling-pet-shop.herokuapp.com/turns?date=${selectDate}`,
@@ -52,7 +52,7 @@ export default class Turnos extends Component {
             horarios.splice(index, 1)
         })
         this.setState({ newDispdias: horarios })
-        this.setState({ loading: false })
+
     }
 
     handleChange = obj => {
@@ -125,9 +125,17 @@ export default class Turnos extends Component {
                         <div>
                             <h2 className="text-center">Horarios preferencia</h2>
                         </div>
-                        <div className="form-group text-center">
-                            <label htmlFor="HastaDate">Fecha</label>
-                            <input type="date" className="form-control text-center" name="day" value={this.state.day} onChange={this.handleChange}></input>
+                        <label htmlFor="HastaDate">Fecha</label>
+                        <div className="form-group text-center row">
+
+                            <div className="col-lg-9 col-xs-6 " >
+                                <input type="date" className="form-control text-center" name="day" value={this.state.day} onChange={this.handleChange}></input>
+
+                            </div>
+                            <div className="col-lg-3 col-xs-6 " >
+                                <button type="button" onClick={() => this.getTurnsByday()} className='btn w-100 btn-success'>Solicitar Turno</button>
+                            </div>
+
                         </div>
                         <label htmlFor="HastaDate">Horario</label>
                         <div class="row justify-content-around">
