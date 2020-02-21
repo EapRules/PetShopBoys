@@ -46,9 +46,10 @@ export default class CardConsulta extends Component {
                                     <p className="col-6 text-center"><strong>Email:</strong> {this.props.name}</p>
                                     <p className="col-6 text-center"><strong>Telefono:</strong> {this.props.phone}</p>
                                 </div>
-                                <div className="row my-2">
+                                <hr class="my-4"></hr>
+                                <div className="row mt-3 mb-2">
                                     <h3 className="col-12 text-center">Sobre la mascota</h3>
-                                    <h4 className="col-12 text-center font-weight-bold">{this.props.petName}</h4>
+                                    <h4 className="col-12 text-center font-weight-bold">Nombre: {this.props.petName}</h4>
                                     <p className="col-4 text-center"><strong>Especie:</strong> {this.props.species}</p>
                                     <p className="col-4 text-center"><strong>Sexo:</strong> {this.props.sex}</p>
                                     <p className="col-4 text-center"><strong>Raza:</strong> {this.props.race}</p>
@@ -59,12 +60,17 @@ export default class CardConsulta extends Component {
                                         {this.props.message}
                                     </span>
                                 </div>
+                                {/* <hr class="my-4"></hr>
+                                <div className="mt-2">
+
+                                </div> */}
 
 
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                <button type="button" class="btn btn-primary">Enviar</button>
+                            <div class="modal-footer modal-foot-consulta">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Volver</button>
+
+                                {/* <button type="button" class="btn btn-info">Enviar</button> */}
                             </div>
                         </div>
                     </div>

@@ -26,7 +26,7 @@
     background: linear-gradient(to bottom, #d4edda, #e2e2e2) !important;
    }
    .cont-consulta{
-    border-radius: 5px;
+    border-radius: 7px;
     width: 35vw;
     height: 15vh;
     border: 1px solid #cfcfcf;
@@ -35,6 +35,15 @@
         font-weight: 400;
         text-align: left;
     }
+   }
+   .modal-body{
+    background: linear-gradient(to bottom, #d4edda, #e2e2e2) !important;
+   }
+   .modal-header{
+       background: #d4edda !important;
+   }
+   .modal-foot-consulta{
+    background: #e2e2e2 !important;
    }
 
 }
