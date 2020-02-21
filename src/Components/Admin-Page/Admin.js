@@ -36,14 +36,20 @@ export default class Admin extends Component {
             if (!isAdmin) { return (<Redirect to='/' />) }
             else {
                 return (
-                    <div className="container" >
-                        <Sidebar changePage={(obj) => this.changePage(obj)} />
-                        {/* {this.state.isUserList ? <Userlist /> : <ProductList />} */}
-                        {this.state.currentPage === 'userList' ? <Userlist /> : null
-                        }
-                        {this.state.currentPage === 'productList' ? <ProductList /> : null}
-                        {this.state.currentPage === 'turnosAdmin' ? <TurnosAdmin /> : null}
+                    <div className="container-flex" >
+                        <div className="row justify-content-around">
+                            <div>
+                                <Sidebar changePage={(obj) => this.changePage(obj)} />
+                            </div>
+                            {/* {this.state.isUserList ? <Userlist /> : <ProductList />} */}
+                            <div style={{ width: "800px" }}>{this.state.currentPage === 'userList' ? <Userlist /> : null
+                            }
+                                {this.state.currentPage === 'productList' ? <ProductList /> : null}
+                                {this.state.currentPage === 'turnosAdmin' ? <TurnosAdmin /> : null}
+                            </div>
 
+
+                        </div>
                     </div >
                 )
             }

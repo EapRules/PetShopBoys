@@ -30,7 +30,7 @@ export default class Navbar extends Component {
         </div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <Link exact to="/" className="navbar-brand" href="#">
-            <img src={Logo192} width="30" height="30" className="d-inline-block align-top rounded shadow" alt="" /><strong className="shadow">  PetShopBoys</strong></Link>
+            <img src={Logo192} width="30" height="30" className="d-inline-block align-top rounded" alt="" /><strong >  PetShopBoys</strong></Link>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>

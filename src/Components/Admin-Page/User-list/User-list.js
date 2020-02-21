@@ -27,7 +27,7 @@ export default class UserList extends Component {
                         Usuarios
                     </h1>
                 </div>
-                <div className="contenedor-tabla m-4">
+                <div className="contenedor-tabla m-4" >
                     <table className="table table-hover table-dark">
                         <thead>
                             <tr>
