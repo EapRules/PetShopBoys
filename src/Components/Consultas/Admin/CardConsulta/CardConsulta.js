@@ -23,7 +23,7 @@ export default class CardConsulta extends Component {
                         <h5 class="card-title font-weight-bold">{this.props.name} {this.props.lastname}</h5>
                         <h6 class="card-subtitle mb-2 text-muted">Mascota: {this.props.species}</h6>
                         <p class="card-text truncate font-weight-bold">{this.props.message}.</p>
-                        <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target={`#exampleModal${this.props.id}`}>Responder</button>
+                        <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target={`#exampleModal${this.props.id}`}>Ver más</button>
                     </div>
                 </div>
 
@@ -55,9 +55,9 @@ export default class CardConsulta extends Component {
                                     <p className="col-4 text-center"><strong>Raza:</strong> {this.props.race}</p>
                                     <h4 className="col-12 text-center mt-3">Consulta</h4>
                                 </div>
-                                <div className="cont-consulta m-auto">
+                                <div className="m-auto text-left">
                                     <span className="col-12 text-left text-consulta">
-                                        {this.props.message}
+                                        " {this.props.message} "
                                     </span>
                                 </div>
                                 {/* <hr class="my-4"></hr>

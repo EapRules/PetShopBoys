@@ -51,7 +51,7 @@ export default class Consultas extends Component {
         ).then(res => res.json())
             .then(data => {
                 this.setState({ loading: false })
-                if (data.ok) {
+                if (data.result) {
                     console.log('Todo bien!');
 
                 } else {
@@ -62,7 +62,8 @@ export default class Consultas extends Component {
                         focusConfirm: false,
                         // timer: 1500,
                         confirmButtonText:
-                            '<a href="http://localhost:3000/" className="text-light btn-inicio">Volver al inicio</a>'
+                            // '<a href="http://localhost:3000/" className="text-light btn-inicio">Volver al inicio</a>'
+                           '<p><a href="http://localhost:3000/" class="text-light mb-0">Volver al Inicio</a></p>'
                     })
                 }
             })
