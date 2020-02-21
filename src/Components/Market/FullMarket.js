@@ -82,7 +82,7 @@ export class FullMarket extends Component {
 
                         {this.state.market.map(i => (
                             <div className='row col-4'>
-                                <MarketCard fullMarket='true' addProduct={(name, id, qtty, price) => { this.addProduct(i.name, i._id, 1, i.price) }} stock={i.stock} imgUrl='https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80' title={i.name} price={i.price} body={i.description} />
+                                <MarketCard fullMarket='true' addProduct={(name, id, qtty, price) => { this.addProduct(i.name, i._id, 1, i.price) }} stock={i.stock} imgUrl={i.url} title={i.name} price={i.price} body={i.description} />
                             </div>
 
                         ))}

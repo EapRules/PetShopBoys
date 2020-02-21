@@ -20,7 +20,7 @@ export default class Turnos extends Component {
         }
     }
     defaultTurns = ["09:00", "09:30", "10:00", "10:00", "10:30", "11:00", "11:30"];
-
+    default = [{ hour: "09:00", avalible: true }, { hour: "09:30", avalible: true }, { hour: "10:00", avalible: true }, { hour: "10:30", avalible: true }, { hour: "11:00", avalible: true }, { hour: "11:30", avalible: true }]
     componentDidMount() {
         let token = localStorage.getItem("token");
         this.setState({ isLoggedIn: token ? true : false });
@@ -28,7 +28,7 @@ export default class Turnos extends Component {
     }
 
     getTurnsByday() {
-        this.setState({ loading: true })
+
         let selectDate = this.state.day
         fetch(
             `https://rolling-pet-shop.herokuapp.com/turns?date=${selectDate}`,
@@ -43,8 +43,6 @@ export default class Turnos extends Component {
             .then(res => { this.listAvailable(res.result); this.componentDidMount() })
     }
 
-
-
     listAvailable(diasOcupados) {
         const horarios = [... this.defaultTurns]
         diasOcupados.map((item) => {
@@ -52,7 +50,7 @@ export default class Turnos extends Component {
             horarios.splice(index, 1)
         })
         this.setState({ newDispdias: horarios })
-        this.setState({ loading: false })
+
     }
 
     handleChange = obj => {
@@ -123,24 +121,34 @@ export default class Turnos extends Component {
                 <div className="row m-5">
                     <div className="col-lg-6 col-xs-12 text-center" >
                         <div>
-                            <h2 className="text-center">Horarios preferencia</h2>
+                            <h2 className="text-center mb-5">Horarios preferencia</h2>
                         </div>
-                        <div className="form-group text-center">
-                            <label htmlFor="HastaDate">Fecha</label>
-                            <input type="date" className="form-control text-center" name="day" value={this.state.day} onChange={this.handleChange}></input>
+                        <label htmlFor="HastaDate">Fecha</label>
+                        <div className="form-group text-center justify-content-center row">
+
+                            <div className="col-lg-6 col-xs-6 " >
+                                <input type="date" className="form-control text-center" name="day" value={this.state.day} onChange={this.handleChange}></input>
+
+                            </div>
+                            <div className="col-lg-3 col-xs-6 " >
+                                <button type="button" onClick={() => this.getTurnsByday()} className='btn w-100 btn-success'>Solicitar Turno</button>
+                            </div>
+
                         </div>
                         <label htmlFor="HastaDate">Horario</label>
                         <div class="row justify-content-around">
 
                             <div className="col-lg-6 col-xs-12" >
                                 <table className="table table-borderless table-sm table-white text-center">
-                                    <thead class="table-success">
+                                    <thead class={this.state.newDispdias.length == 0 ? "table-warning" : "table-success"}>
                                         <tr >
-                                            <th colspan="2">Turnos mañana</th>
+                                            <th colspan="2"> {this.state.newDispdias.length == 0 ? "Sin Turnos" : "Turnos"} </th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {this.state.newDispdias.map(item => (
+                                        <h3>{this.state.newDispdias.length == 0 ? "Seleccione una fecha con turnos disponibles" : ""}</h3   >
+                                        {console.log(this.state.newDispdias)}
+                                        {this.state.newDispdias.map((item, i) => (
                                             <tr>
                                                 <td>{item}</td>
                                                 <button type="button" class="btn btn-primary btn-sm m-1" name="hour" value={item} onClick={this.handleChange}>Agendar</button>
@@ -155,7 +163,7 @@ export default class Turnos extends Component {
                     <div className="col-lg-6 col-xs-12 ">
 
                         <form onSubmit={this.onSubmit}>
-                            <h2 className="text-center">Datos cliente</h2>
+                            <h2 className="text-center mb-5">Datos cliente</h2>
                             <div className="form-row">
                                 <div className="form-group col-md-6">
                                     <label htmlFor="textNombre">Nombre y Apellido</label>
