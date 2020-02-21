@@ -9,7 +9,7 @@ export default class UserList extends Component {
     }
 
     componentDidMount() {
-        fetch("http://192.168.10.60:4000/users/admin/users", {
+        fetch("https://rolling-pet-shop.herokuapp.com/users/admin/users", {
             method: "GET",
             // body: JSON.stringify({ products: toBuy }),
             headers: { "Content-Type": "application/json", "authorization": `Bearer ${localStorage.getItem('token')}` }

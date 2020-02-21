@@ -23,6 +23,7 @@ export default class Register extends Component {
 		}
 		fetch(
 			"https://rolling-pet-shop.herokuapp.com/signup",
+			// "http://192.168.10.60:4000/signup",
 			{
 				method: "POST",
 				body: JSON.stringify(this.state),
