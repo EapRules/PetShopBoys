@@ -16,6 +16,9 @@ export default class Profile extends Component {
 	}
 	componentDidMount() {
 		this.getDatafromAccount()
+		console.log('====================================');
+		console.log(this.state.saveData);
+		console.log('====================================');
 	}
 
 	getDatafromAccount() {
@@ -31,7 +34,7 @@ export default class Profile extends Component {
 		).then(res => res.json())
 			.then(res => {
 				this.setState({ saveData: res })
-				console.log('====================================');
+				console.log('============Aiudaaaa=============');
 				console.log(res);
 				console.log('====================================');
 			})
@@ -42,6 +45,7 @@ export default class Profile extends Component {
 		this.setState({ [name]: value })
 	}
 	onSubmit = async obj => {
+
 		this.getDatafromAccount()
 		if (obj) {
 			obj.preventDefault();
@@ -59,7 +63,7 @@ export default class Profile extends Component {
 		);
 
 		const res = await response.json();
-
+		closeAllModals()
 		if (!res.errors) {
 			Swal.fire({
 				icon: 'success',
@@ -93,27 +97,27 @@ export default class Profile extends Component {
 								<h2>Datos Personales</h2>
 								<div className="form-group mt-5">
 									<label htmlFor="exampleInputEmail1">Nombre</label>
-									{this.state.saveData ? <input type="text" className="form-control-complete" name='name' disabled placeholder={this.state.saveData.name} /> : <input type="text" className="form-control" name='name' value={this.state.username} onChange={this.handleChange} />}
+									{!this.state.saveData || !this.state.saveData.mesagge ? <input type="text" className="form-control-complete" name='name' disabled placeholder={this.state.saveData.name} /> : <input type="text" className="form-control" name='name' value={this.state.username} onChange={this.handleChange} />}
 								</div>
 								<div className="form-group">
 									<label htmlFor="exampleInputPassword1">Apellido</label>
-									{this.state.saveData ? <input type="text" className="form-control-complete" name='name' disabled placeholder={this.state.saveData.lastname} /> : <input type="text" className="form-control-complete" name='lastname' value={this.state.password} onChange={this.handleChange} />}
+									{!this.state.saveData || !this.state.saveData.mesagge ? <input type="text" className="form-control-complete" name='name' disabled placeholder={this.state.saveData.lastname} /> : <input type="text" className="form-control-complete" name='lastname' value={this.state.password} onChange={this.handleChange} />}
 								</div>
 								<div className="form-group">
 									<label htmlFor="exampleInputPassword1">Direccion</label>
 
-									{this.state.saveData ? <input type="text" className="form-control-complete" name='name' disabled placeholder={this.state.saveData.address} /> : <input type="text" className="form-control" name='address' value={this.state.password} onChange={this.handleChange} />}
+									{!this.state.saveData || !this.state.saveData.mesagge ? <input type="text" className="form-control-complete" name='name' disabled placeholder={this.state.saveData.address} /> : <input type="text" className="form-control" name='address' value={this.state.password} onChange={this.handleChange} />}
 								</div>
 								<div className="form-group">
 									<label htmlFor="exampleInputPassword1">Email</label>
-									{this.state.saveData ? <input type="text" className="form-control-complete" name='name' disabled placeholder={this.state.saveData.email} /> : <input type="email" className="form-control" name='email' value={this.state.password} onChange={this.handleChange} />}
+									{!this.state.saveData || !this.state.saveData.mesagge ? <input type="text" className="form-control-complete" name='name' disabled placeholder={this.state.saveData.email} /> : <input type="email" className="form-control" name='email' value={this.state.password} onChange={this.handleChange} />}
 								</div>
 								<div className="form-group">
 									<label htmlFor="exampleInputPassword1">Telefono</label>
-									{this.state.saveData ? <input type="text" className="form-control-complete" name='name' disabled placeholder={this.state.saveData.celphone} /> : <input type="number" className="form-control" name='celphone' value={this.state.celphone} onChange={this.handleChange} />}
+									{!this.state.saveData || !this.state.saveData.mesagge ? <input type="text" className="form-control-complete" name='name' disabled placeholder={this.state.saveData.celphone} /> : <input type="number" className="form-control" name='celphone' value={this.state.celphone} onChange={this.handleChange} />}
 
 								</div>
-								{this.state.saveData ? <button data-dismiss="modal" className="btn btn-warning w-100 mt-4">Cerrar</button> : <button type="submit" className="btn btn-success w-100 mt-4">Guardar</button>}
+								{!this.state.saveData || !this.state.saveData.mesagge ? <button data-dismiss="modal" className="btn btn-warning w-100 mt-4">Cerrar</button> : <button type="submit" className="btn btn-success w-100 mt-4">Guardar</button>}
 
 							</form>
 						</div>
