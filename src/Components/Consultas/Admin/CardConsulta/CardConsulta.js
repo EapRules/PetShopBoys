@@ -43,15 +43,15 @@ export default class CardConsulta extends Component {
                                     <h2 className="col-12 text-center font-weight-bold">{this.props.name} {this.props.lastname}</h2>
                                 </div>
                                 <div className="row my-2">
-                                    <p className="col-6 text-center">Email: {this.props.name}</p>
-                                    <p className="col-6 text-center">Telefono: {this.props.phone}</p>
+                                    <p className="col-6 text-center"><strong>Email:</strong> {this.props.name}</p>
+                                    <p className="col-6 text-center"><strong>Telefono:</strong> {this.props.phone}</p>
                                 </div>
                                 <div className="row my-2">
                                     <h3 className="col-12 text-center">Sobre la mascota</h3>
-                                    <h4 className="col-12 text-center">{this.props.pet_name}</h4>
-                                    <p className="col-4 text-center">Especie: {this.props.species}</p>
-                                    <p className="col-4 text-center">Sexo: {this.props.sex}</p>
-                                    <p className="col-4 text-center">Raza: {this.props.race}</p>
+                                    <h4 className="col-12 text-center font-weight-bold">{this.props.petName}</h4>
+                                    <p className="col-4 text-center"><strong>Especie:</strong> {this.props.species}</p>
+                                    <p className="col-4 text-center"><strong>Sexo:</strong> {this.props.sex}</p>
+                                    <p className="col-4 text-center"><strong>Raza:</strong> {this.props.race}</p>
                                     <h4 className="col-12 text-center mt-3">Consulta</h4>
                                 </div>
                                 <div className="cont-consulta m-auto">

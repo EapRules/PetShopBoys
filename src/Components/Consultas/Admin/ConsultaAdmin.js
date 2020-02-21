@@ -32,7 +32,7 @@ export default class ConsultaAdmin extends Component {
 
                
 
-                {this.state.contactAdmin.map((item ,index) => 
+                {this.state.contactAdmin.map((item) => 
                 
                 <CardConsulta 
                 name={item.name} 
@@ -43,7 +43,7 @@ export default class ConsultaAdmin extends Component {
                 race={item.race}
                 sex={item.sex}
                 message={item.message}
-                pet_name={item.pet_name}
+                petName={item.petName}
                 id={item._id}
                 >
                 </CardConsulta>

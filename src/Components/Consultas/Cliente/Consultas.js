@@ -15,7 +15,7 @@ export default class Consultas extends Component {
             "lastname": "",
             "email": "",
             "phone": "",
-            "pet_name": "",
+            "petName": "",
             "species": "",
             "race": "",
             "sex": "",
@@ -182,7 +182,7 @@ export default class Consultas extends Component {
                     <h2 className="text-center mt-3 font-weight-bold">Sobre su Mascota</h2>
                     <div class="row py-3 justify-content-around">
                         <div class="form-group col-md-5">
-                            <label>species</label>
+                            <label>Especies</label>
                             <select class="form-control" name="species" required="required" onChange={this.handleInputChange.bind(this)} value={this.state.species}>
                                 <option selected>Elegir...</option>
                                 <option value="Canino">Canino</option>
@@ -202,7 +202,7 @@ export default class Consultas extends Component {
                             <input type="text" name="race" className="form-control input-consulta" placeholder="Raza de la mascota" required="required" onChange={this.handleInputChange.bind(this)} value={this.state.race} />
                         </div>
                         <div className="col-5">
-                            <input type="text" name="pet_name" className="form-control input-consulta" placeholder="Nombre de la mascota" required="required" onChange={this.handleInputChange.bind(this)} value={this.state.pet_name} />
+                            <input type="text" name="petName" className="form-control input-consulta" placeholder="Nombre de la mascota" required="required" onChange={this.handleInputChange.bind(this)} value={this.state.petName} />
                         </div>
                         <div className="form-group my-5">
                             <label>Escriba su consulta aquí</label>
