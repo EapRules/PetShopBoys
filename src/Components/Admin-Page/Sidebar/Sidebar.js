@@ -7,7 +7,7 @@ class Sidebar extends Component {
         return (
             <div className="container">
                 <div className="row">
-                    <nav className="col-md-2 d-none d-md-block bg-light sidebar">
+                    <nav className="col-md-2 d-none d-md-block sidebar">
                         <div className="sidebar-sticky">
                             <ul className="nav flex-column">
                                 <li className="nav-item active">
@@ -23,7 +23,11 @@ class Sidebar extends Component {
                                     <div className="nav-link" style={{ cursor: 'pointer' }} onClick={() => this.props.changePage('productList')}><i className="nc-icon nc-notes"></i>Productos</div>
                                 </li>
                                 <li>
+<<<<<<< HEAD
                                     <div className="nav-link" style={{ cursor: 'pointer' }} onClick={() => this.props.changePage('consultaAdmin')}><i className="nc-icon nc-notes"></i>Consultas</div>
+=======
+                                    <div className="nav-link" style={{ cursor: 'pointer' }} onClick={() => this.props.changePage('turnosAdmin')}><i className="nc-icon nc-circle-09"></i>Turnos</div>
+>>>>>>> e76c4f38d5e47825fbfce6a0469740a90a571a63
                                 </li>
 
                             </ul>

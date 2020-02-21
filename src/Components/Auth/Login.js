@@ -39,8 +39,8 @@ export default class Login extends Component {
     }
 
     fetch(
-      // "https://rolling-pet-shop.herokuapp.com/signin",
       "https://rolling-pet-shop.herokuapp.com/signin",
+      // "http://192.168.10.60:4000/signin",
       { method: "POST", body: JSON.stringify(this.state), headers: { "Content-Type": "application/json" } })
       .then(res => (res.json()))
       .then(data => {

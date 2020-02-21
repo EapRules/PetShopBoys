@@ -19,6 +19,24 @@
     background: #f8f9fa;
     border-bottom: 2px solid #d4edda !important;
   }
+  .form-control-complete {
+    text-align: center;
+    border: none;
+    background: #ffffff;
+    border-bottom: 2px solid #d4edda !important;
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    /* padding: .375rem .75rem; */
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
 }
 input[type="text"],
 input[type="email"] {

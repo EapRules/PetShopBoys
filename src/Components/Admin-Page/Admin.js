@@ -3,7 +3,11 @@ import { Redirect } from 'react-router-dom'
 import ProductList from './Product-list/Product-list'
 import Userlist from './User-list/User-list'
 import Sidebar from './Sidebar/Sidebar'
+<<<<<<< HEAD
 import ConsultaAdmin from '../Consultas/Admin/ConsultaAdmin'
+=======
+import TurnosAdmin from './TurnosAdmin/TurnosAdmin'
+>>>>>>> e76c4f38d5e47825fbfce6a0469740a90a571a63
 
 // Importing React Router
 import { BrowserRouter as Router, Route, withRouter, Switch } from "react-router-dom";
@@ -44,7 +48,7 @@ export default class Admin extends Component {
                         }
                         {this.state.currentPage === 'productList' ? <ProductList /> : null}
                         {this.state.currentPage === 'consultaAdmin' ? <ConsultaAdmin /> : null}
-
+                        {this.state.currentPage === 'turnosAdmin' ? <TurnosAdmin /> : null}
                     </div >
                 )
             }
