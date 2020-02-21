@@ -3,16 +3,10 @@ import { Redirect } from 'react-router-dom'
 import ProductList from './Product-list/Product-list'
 import Userlist from './User-list/User-list'
 import Sidebar from './Sidebar/Sidebar'
-<<<<<<< HEAD
 import ConsultaAdmin from '../Consultas/Admin/ConsultaAdmin'
-=======
 import TurnosAdmin from './TurnosAdmin/TurnosAdmin'
->>>>>>> e76c4f38d5e47825fbfce6a0469740a90a571a63
 
 // Importing React Router
-import { BrowserRouter as Router, Route, withRouter, Switch } from "react-router-dom";
-import Navbar from '../Header/Navbar/Navbar';
-import Footer from '../Footer/Footer';
 import jwt from 'jsonwebtoken'
 
 
