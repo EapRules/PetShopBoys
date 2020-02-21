@@ -49,7 +49,7 @@ export default class CardConsulta extends Component {
                                 <hr class="my-4"></hr>
                                 <div className="row mt-3 mb-2">
                                     <h3 className="col-12 text-center">Sobre la mascota</h3>
-                                    <h4 className="col-12 text-center font-weight-bold">Nombre: {this.props.petName}</h4>
+                                    <h4 className="col-12 text-center font-weight-bold my-2">{this.props.petName}</h4>
                                     <p className="col-4 text-center"><strong>Especie:</strong> {this.props.species}</p>
                                     <p className="col-4 text-center"><strong>Sexo:</strong> {this.props.sex}</p>
                                     <p className="col-4 text-center"><strong>Raza:</strong> {this.props.race}</p>
