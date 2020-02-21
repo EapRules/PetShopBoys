@@ -11,7 +11,7 @@ export default class Home extends Component {
             <section>
                 <Slider />
                 <Services />
-                <FullMarket />
+                {/* <FullMarket /> */}
             </section>
         )
     }
