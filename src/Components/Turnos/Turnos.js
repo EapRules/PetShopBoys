@@ -131,7 +131,7 @@ export default class Turnos extends Component {
 
                             </div>
                             <div className="col-lg-3 col-xs-6 " >
-                                <button type="button" onClick={() => this.getTurnsByday()} className='btn w-100 btn-success'>Solicitar Turno</button>
+                                <button type="button" onClick={() => this.getTurnsByday()} className='btn w-100 btn-primary'>Verificar disponibilidad</button>
                             </div>
 
                         </div>
