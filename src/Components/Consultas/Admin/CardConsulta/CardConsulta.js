@@ -39,13 +39,16 @@ export default class CardConsulta extends Component {
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <div className="row">
-                                    <h2 className="col-12 text-center font-weight-bold">{this.props.name} {this.props.lastname}</h2>
+                                <div className="cont-pet">
+                                    <div className="row">
+                                        <h2 className="col-12 text-center font-weight-bold">{this.props.name} {this.props.lastname}</h2>
+                                    </div>
+                                    <div className="row my-2">
+                                        <p className="col-6 text-center"><strong>Email:</strong> {this.props.email}</p>
+                                        <p className="col-6 text-center"><strong>Telefono:</strong> {this.props.phone}</p>
+                                    </div>
                                 </div>
-                                <div className="row my-2">
-                                    <p className="col-6 text-center"><strong>Email:</strong> {this.props.email}</p>
-                                    <p className="col-6 text-center"><strong>Telefono:</strong> {this.props.phone}</p>
-                                </div>
+
                                 <hr class="my-4"></hr>
                                 <div className="row mt-3 mb-2">
                                     <h3 className="col-12 text-center">Sobre la mascota</h3>
@@ -60,17 +63,19 @@ export default class CardConsulta extends Component {
                                         " {this.props.message} "
                                     </span>
                                 </div>
-                                {/* <hr class="my-4"></hr>
+                                <hr class="my-4"></hr>
                                 <div className="mt-2">
-
-                                </div> */}
-
+                                </div>
+                                <div className="form-group my-5">
+                                    <label>Escriba su consulta aquí</label>
+                                    <textarea name="message" className="form-control textarea-respuesta" rows="5" required="required"></textarea>
+                                </div>
 
                             </div>
                             <div class="modal-footer modal-foot-consulta">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Volver</button>
 
-                                {/* <button type="button" class="btn btn-info">Enviar</button> */}
+                                <button type="button" class="btn btn-info">Enviar</button>
                             </div>
                         </div>
                     </div>
